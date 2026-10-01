@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EVENTO — Společně tvoříme víc.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1E0B3D; --royal:#6D28D9; --electric:#9333EA; --medium:#A855F7;
+    --sky:#DAB6FF; --ice:#FFFFFF; --white:#FFFFFF; --slate:#6B5C7D; --ink:#140A20;
+    --line:rgba(10,27,61,0.12); --danger:#C0392B;
+    --font-display:'Space Grotesk', sans-serif; --font-body:'Inter', sans-serif;
+  }
+  :root:not([data-theme="light"]){ --navy:#1E0B3D; --royal:#6D28D9; --electric:#9333EA; --medium:#A855F7; --sky:#DAB6FF; --ice:#FFFFFF; --white:#FFFFFF; --slate:#6B5C7D; --ink:#140A20; --line:rgba(10,27,61,0.12); }
+  :root[data-theme="dark"]{ --navy:#1E0B3D; --royal:#6D28D9; --electric:#9333EA; --medium:#A855F7; --sky:#DAB6FF; --ice:#FFFFFF; --white:#FFFFFF; --slate:#6B5C7D; --ink:#140A20; --line:rgba(10,27,61,0.12); }
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --navy:#1E0B3D; --royal:#6D28D9; --electric:#9333EA; --medium:#A855F7; --sky:#DAB6FF; --ice:#FFFFFF; --white:#FFFFFF; --slate:#6B5C7D; --ink:#140A20; --line:rgba(10,27,61,0.12); } }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--white);color:var(--ink);font-family:var(--font-body);-webkit-font-smoothing:antialiased;}
+  img,svg{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;cursor:pointer;}
+  button{font-family:var(--font-body);cursor:pointer;}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 28px;}
+  section{padding:110px 0;}
+  section + section{border-top:1px solid var(--line);}
+  h1,h2,h3{font-family:var(--font-display);margin:0;color:var(--navy);}
+  p{line-height:1.65;color:var(--slate);margin:0;}
+  .eyebrow{font-weight:600;font-size:0.8rem;color:var(--royal);margin:0 0 14px;letter-spacing:0.01em;}
+  .section-head{max-width:640px;margin-bottom:52px;}
+  .section-head h2{font-size:clamp(2rem,3.4vw,2.8rem);letter-spacing:-0.01em;line-height:1.1;margin-bottom:16px;}
+  .section-head p{font-size:1.05rem;}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1;transform:none;}
+
+  /* NAV */
+  header.site-nav{position:sticky;top:0;z-index:80;background:rgba(255,255,255,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  header.site-nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;gap:20px;}
+  .logo-lockup{display:flex;align-items:center;gap:9px;font-family:var(--font-display);font-weight:700;font-size:1.15rem;color:var(--navy);}
+  .logo-lockup svg{width:26px;height:26px;}
+  .nav-links{display:flex;align-items:center;gap:30px;}
+  .nav-links a{font-size:0.88rem;font-weight:500;color:var(--navy);}
+  .nav-links a.active{color:var(--royal);}
+  .nav-links a:hover{color:var(--royal);}
+  .nav-right{display:flex;align-items:center;gap:14px;}
+  .nav-cta{font-size:0.85rem;font-weight:600;color:var(--white)!important;background:var(--royal);padding:10px 20px;border-radius:30px;}
+  .nav-cta:hover{background:var(--electric);}
+  .nav-ig{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--navy);}
+  .nav-ig svg{width:16px;height:16px;}
+  .nav-toggle{display:none;background:none;border:none;padding:6px;}
+  .nav-toggle span{display:block;width:22px;height:2px;background:var(--navy);margin:5px 0;}
+  .mobile-menu{display:none;flex-direction:column;gap:2px;padding:10px 28px 20px;border-top:1px solid var(--line);background:var(--white);}
+  .mobile-menu a{padding:12px 0;font-size:0.95rem;font-weight:500;color:var(--navy);border-bottom:1px solid var(--line);}
+  .mobile-menu.open{display:flex;}
+  @media(max-width:860px){ .nav-links{display:none;} .nav-toggle{display:block;} }
+
+  /* BUTTONS */
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:0.92rem;padding:15px 28px;border-radius:30px;border:none;}
+  .btn-primary{background:var(--navy);color:var(--white);}
+  .btn-primary:hover{background:var(--royal);}
+  .btn-light{background:var(--white);color:var(--navy);}
+  .btn-outline{background:transparent;color:var(--navy);border:1px solid var(--line);}
+  .btn-outline:hover{border-color:var(--royal);color:var(--royal);}
+  .btn-sm{padding:9px 16px;font-size:0.8rem;border-radius:20px;}
+  .btn-danger{background:transparent;color:var(--danger);border:1px solid rgba(192,57,43,0.3);}
+  .btn-danger:hover{background:rgba(192,57,43,0.08);}
+  .link-btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:0.92rem;color:var(--royal);border-bottom:1px solid var(--royal);padding-bottom:2px;}
+
+  /* HERO (home) */
+  .hero{background:var(--navy);color:var(--white);padding:180px 0 130px;position:relative;overflow:hidden;}
+  .hero .wrap{position:relative;z-index:2;}
+  .hero-bg{position:absolute;inset:0;z-index:1;opacity:0.55;}
+  .hero-kicker{color:var(--sky);font-weight:600;font-size:0.85rem;letter-spacing:0.03em;margin-bottom:24px;text-transform:uppercase;}
+  .hero h1{color:var(--white);font-size:clamp(2.8rem,7vw,5.4rem);line-height:0.98;letter-spacing:-0.02em;font-weight:700;max-width:900px;}
+  .hero-claim{font-family:var(--font-display);font-weight:600;font-size:clamp(1.3rem,2.2vw,1.8rem);color:var(--sky);margin-top:26px;}
+  .hero-sub{max-width:560px;margin-top:18px;color:rgba(255,255,255,0.72);font-size:1.02rem;}
+  .hero-cta{display:flex;gap:16px;margin-top:40px;flex-wrap:wrap;}
+
+  /* page header (non-home) */
+  .page-header{background:var(--navy);color:var(--white);padding:150px 0 70px;}
+  .page-header .eyebrow{color:var(--sky);}
+  .page-header h1{color:var(--white);font-size:clamp(2.2rem,4.5vw,3.4rem);letter-spacing:-0.01em;}
+  .page-header p{color:rgba(255,255,255,0.72);max-width:600px;margin-top:14px;font-size:1.02rem;}
+
+  /* CARDS: activities */
+  .cards-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+  .work-card{border-radius:14px;overflow:hidden;position:relative;min-height:300px;padding:32px;display:flex;flex-direction:column;justify-content:flex-end;color:var(--white);transition:transform .35s ease;}
+  .work-card:hover{transform:translateY(-4px);}
+  .work-card .bg{position:absolute;inset:0;z-index:0;transition:transform .5s ease;}
+  .work-card:hover .bg{transform:scale(1.05);}
+  .work-card > *:not(.bg){position:relative;z-index:1;}
+  .work-card h3{color:var(--white);font-size:1.5rem;margin-bottom:8px;}
+  .work-card p{color:rgba(255,255,255,0.78);font-size:0.92rem;max-width:380px;}
+  .work-card .tag{font-size:0.72rem;font-weight:600;color:var(--sky);text-transform:uppercase;letter-spacing:0.03em;margin-bottom:10px;}
+  .work-card .cta-arrow{margin-top:18px;font-size:0.85rem;font-weight:600;display:flex;align-items:center;gap:6px;}
+
+  /* PROJECTS */
+  .filter-row{display:flex;gap:10px;margin-bottom:36px;flex-wrap:wrap;}
+  .filter-chip{padding:9px 18px;border-radius:20px;border:1px solid var(--line);font-size:0.82rem;font-weight:600;color:var(--slate);background:var(--white);}
+  .filter-chip.active{background:var(--navy);color:var(--white);border-color:var(--navy);}
+  .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .proj-card{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--white);transition:box-shadow .3s ease, transform .3s ease;}
+  .proj-card:hover{box-shadow:0 18px 40px -22px rgba(10,27,61,0.35);transform:translateY(-3px);}
+  .proj-media{height:180px;position:relative;overflow:hidden;background-size:cover;background-position:center;}
+  .proj-status{position:absolute;top:14px;left:14px;font-size:0.66rem;font-weight:600;padding:5px 12px;border-radius:20px;background:rgba(255,255,255,0.92);color:var(--navy);text-transform:uppercase;letter-spacing:0.02em;}
+  .proj-demo{position:absolute;top:14px;right:14px;font-size:0.62rem;font-weight:600;padding:4px 10px;border-radius:20px;background:rgba(10,27,61,0.55);color:var(--white);}
+  .proj-body{padding:20px 22px 24px;}
+  .proj-body .cat{font-size:0.72rem;color:var(--royal);font-weight:600;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.02em;}
+  .proj-body h4{font-size:1.1rem;color:var(--navy);margin-bottom:8px;font-family:var(--font-display);}
+  .proj-body p{font-size:0.85rem;margin-bottom:16px;}
+  .section-cta{margin-top:40px;text-align:center;}
+  .empty-state{border:1px dashed var(--line);border-radius:14px;padding:60px 30px;text-align:center;color:var(--slate);}
+
+  /* PROJECT DETAIL */
+  .detail-hero{position:relative;color:var(--white);padding:180px 0 60px;background-size:cover;background-position:center;}
+  .detail-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(10,27,61,0.55), rgba(10,27,61,0.92));}
+  .detail-hero .wrap{position:relative;z-index:1;}
+  .detail-hero h1{color:var(--white);font-size:clamp(2.2rem,5vw,3.6rem);}
+  .detail-meta{display:flex;gap:14px;flex-wrap:wrap;margin-top:20px;}
+  .detail-meta span{font-size:0.78rem;font-weight:600;padding:7px 14px;border-radius:20px;background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.25);}
+  .detail-body{max-width:760px;margin:0 auto;padding:70px 28px;}
+  .detail-body p{font-size:1.05rem;margin-bottom:20px;}
+  .back-link{display:inline-flex;align-items:center;gap:6px;font-size:0.85rem;color:var(--sky);margin-bottom:20px;font-weight:600;}
+
+  /* TEAM */
+  .team-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;}
+  .team-card{aspect-ratio:1/1;border-radius:12px;background:linear-gradient(160deg,#4A1F8F,#1E0B3D 75%);position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:12px;background-size:cover;background-position:center;}
+  .team-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(10,27,61,0), rgba(10,27,61,0.75));}
+  .team-card .meta{position:relative;z-index:1;}
+  .team-card .meta b{display:block;color:var(--white);font-size:0.8rem;font-family:var(--font-body);}
+  .team-card .meta span{display:block;color:var(--sky);font-size:0.65rem;}
+  .teacher-note{margin-top:48px;padding-top:36px;border-top:1px solid var(--line);color:var(--slate);font-size:0.9rem;}
+  .teacher-note b{color:var(--navy);}
+  @media(max-width:900px){ .team-grid{grid-template-columns:repeat(3,1fr);} .proj-grid,.cards-grid{grid-template-columns:1fr;} }
+  @media(max-width:640px){ .team-grid{grid-template-columns:repeat(2,1fr);} }
+
+  /* ORG */
+  .org-flow{display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap;margin-top:8px;}
+  .org-step{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:18px 26px;text-align:center;min-width:160px;}
+  .org-step b{display:block;font-family:var(--font-display);color:var(--navy);font-size:0.95rem;margin-bottom:4px;}
+  .org-step span{font-size:0.76rem;color:var(--slate);}
+  .org-arrow{color:var(--sky);font-size:1.4rem;padding:0 22px;}
+  @media(max-width:640px){ .org-flow{flex-direction:column;} .org-arrow{transform:rotate(90deg);padding:6px 0;} }
+
+  /* CONTACT */
+  .contact-section{background:var(--navy);color:var(--white);}
+  .contact-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center;}
+  .contact-section h2, .contact-section h1{color:var(--white);}
+  .contact-section .section-head p, .contact-section .page-header p{color:rgba(255,255,255,0.7);}
+  .contact-list{display:flex;flex-direction:column;gap:18px;margin-top:10px;}
+  .contact-item{display:flex;align-items:center;gap:14px;font-size:1rem;}
+  .contact-item svg{width:20px;height:20px;flex:none;color:var(--sky);}
+  .contact-item a{color:var(--white);font-weight:500;}
+  .contact-item a:hover{color:var(--sky);}
+  .ig-block{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);border-radius:16px;padding:36px;text-align:center;}
+  .ig-block h3{color:var(--white);font-size:1.3rem;margin-bottom:10px;}
+  .ig-block p{color:rgba(255,255,255,0.65);font-size:0.88rem;margin-bottom:22px;}
+
+  @media(max-width:900px){ .contact-grid{grid-template-columns:1fr;} }
+
+  /* FOOTER */
+  footer.site-footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.12);padding:36px 0;}
+  footer.site-footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+  footer.site-footer p{color:rgba(255,255,255,0.5);font-size:0.8rem;}
+  footer.site-footer .foot-links{display:flex;gap:20px;flex-wrap:wrap;}
+  footer.site-footer .foot-links a{color:rgba(255,255,255,0.6);font-size:0.8rem;}
+  footer.site-footer .foot-links a:hover{color:var(--sky);}
+
+  /* ===== ADMIN ===== */
+  .admin-bar{background:var(--navy);color:var(--white);padding:16px 0;}
+  .admin-bar .wrap{display:flex;justify-content:space-between;align-items:center;}
+  .admin-bar .logo-lockup{color:var(--white);}
+  .admin-bar-right{display:flex;gap:14px;align-items:center;font-size:0.82rem;}
+  .admin-bar-right a{color:rgba(255,255,255,0.75);}
+  .admin-bar-right a:hover{color:var(--white);}
+  .admin-shell{display:grid;grid-template-columns:220px 1fr;min-height:70vh;}
+  .admin-side{border-right:1px solid var(--line);padding:32px 20px;}
+  .admin-side a{display:block;padding:11px 14px;border-radius:8px;font-size:0.88rem;font-weight:500;color:var(--navy);margin-bottom:4px;}
+  .admin-side a.active{background:var(--ice);color:var(--royal);font-weight:600;}
+  .admin-side a:hover{background:var(--ice);}
+  .admin-main{padding:40px 40px 80px;}
+  .admin-main h2{font-size:1.6rem;margin-bottom:6px;}
+  .admin-main > p.sub{color:var(--slate);font-size:0.9rem;margin-bottom:32px;}
+  @media(max-width:800px){ .admin-shell{grid-template-columns:1fr;} .admin-side{display:flex;overflow-x:auto;border-right:none;border-bottom:1px solid var(--line);padding:16px 20px;gap:6px;} .admin-side a{white-space:nowrap;margin-bottom:0;} .admin-main{padding:28px 20px 60px;} }
+
+  .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:36px;}
+  .stat-card{border:1px solid var(--line);border-radius:12px;padding:22px;}
+  .stat-card span{display:block;font-family:var(--font-display);font-size:2rem;color:var(--navy);}
+  .stat-card small{color:var(--slate);font-size:0.8rem;}
+  .quick-actions{display:flex;gap:12px;flex-wrap:wrap;}
+  @media(max-width:640px){ .stat-grid{grid-template-columns:1fr;} }
+
+  .login-box{max-width:380px;margin:100px auto;padding:40px;border:1px solid var(--line);border-radius:14px;text-align:center;}
+  .login-box h2{margin-bottom:8px;}
+  .login-box p{margin-bottom:24px;font-size:0.88rem;}
+  .field{margin-bottom:18px;text-align:left;}
+  .field label{display:block;font-size:0.8rem;font-weight:600;color:var(--navy);margin-bottom:6px;}
+  .field input, .field textarea, .field select{width:100%;padding:11px 14px;border:1px solid var(--line);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;color:var(--ink);background:var(--white);}
+  .field textarea{resize:vertical;min-height:90px;}
+  .field input:focus, .field textarea:focus, .field select:focus{outline:none;border-color:var(--royal);}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .hint{font-size:0.76rem;color:var(--slate);margin-top:4px;}
+
+  table.admin-table{width:100%;border-collapse:collapse;margin-bottom:20px;}
+  table.admin-table th{text-align:left;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.03em;color:var(--slate);padding:10px 12px;border-bottom:1px solid var(--line);}
+  table.admin-table td{padding:12px;border-bottom:1px solid var(--line);font-size:0.88rem;vertical-align:middle;}
+  .row-thumb{width:44px;height:44px;border-radius:8px;background:linear-gradient(160deg,#4A1F8F,#1E0B3D);background-size:cover;background-position:center;}
+  .badge{font-size:0.68rem;font-weight:600;padding:4px 10px;border-radius:14px;background:var(--ice);color:var(--royal);text-transform:uppercase;}
+  .row-actions{display:flex;gap:8px;}
+  .icon-btn{width:32px;height:32px;border-radius:8px;border:1px solid var(--line);background:var(--white);display:flex;align-items:center;justify-content:center;color:var(--navy);}
+  .icon-btn:hover{border-color:var(--royal);color:var(--royal);}
+  .icon-btn svg{width:15px;height:15px;}
+
+  .form-card{border:1px solid var(--line);border-radius:14px;padding:28px;margin-bottom:36px;background:var(--ice);}
+  .form-card h3{font-size:1.05rem;margin-bottom:18px;}
+  .form-actions{display:flex;gap:10px;margin-top:8px;}
+  .upload-row{display:flex;align-items:center;gap:14px;}
+  .upload-preview{width:64px;height:64px;border-radius:10px;background:var(--sky);background-size:cover;background-position:center;flex:none;}
+
+  .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--navy);color:var(--white);padding:14px 22px;border-radius:30px;font-size:0.85rem;font-weight:500;opacity:0;pointer-events:none;transition:all .3s ease;z-index:200;}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <g id="mark-color">
+      <polygon points="4,52 16,52 16,30 4,36" fill="#1E0B3D"/>
+      <polygon points="22,52 34,52 34,18 22,26" fill="#6D28D9"/>
+      <polygon points="40,52 52,52 52,6 40,16" fill="#9333EA"/>
+    </g>
+    <g id="mark-color-dark">
+      <polygon points="4,52 16,52 16,30 4,36" fill="#DAB6FF"/>
+      <polygon points="22,52 34,52 34,18 22,26" fill="#FFFFFF"/>
+      <polygon points="40,52 52,52 52,6 40,16" fill="#A855F7"/>
+    </g>
+    <g id="ig-icon">
+      <rect x="4" y="2" width="16" height="20" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <circle cx="17" cy="7" r="1" fill="currentColor"/>
+    </g>
+  </defs>
+</svg>
+
+<div id="header-slot"></div>
+<main id="page"></main>
+<div id="footer-slot"></div>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ================= DATA LAYER ================= */
+const STORAGE_KEY = 'eventoData_v1';
+const AUTH_KEY = 'eventoAdminAuth';
+const ADMIN_PASSWORD = 'evento2026'; // demo-only client-side gate, not real security
+
+function seedData(){
+  return {
+    content: {
+      claim: 'Společně tvoříme víc.',
+      heroText: 'Studentská firma, která mění nápady ve skutečné projekty a zážitky.',
+      coDelameText: 'EVENTO organizuje soutěže, akce a projekty, které dávají studentskému životu úroveň a řád. Nejsme vázaní na jeden typ akce — propojujeme sport, byznys, výjezdy i školní dění pod jednu značku.',
+      contactEmail: 'evento@heroldovysady.cz',
+      instagramUrl: ''
+    },
+    projects: [
+      {
+        id: 'p1', slug: 'ekonomicka-hra-2026', name: 'Ekonomická hra 2026', category: 'Business',
+        status: 'aktualni', demo: true, image: '',
+        summary: 'Studentské týmy řídí vlastní virtuální firmy po dobu celého semestru.',
+        description: 'Ekonomická hra učí studenty základům podnikání formou simulace — od založení firmy přes marketing až po finanční řízení. Týmy soutěží o nejlepší výsledky v rámci školního roku.',
+        order: 1
+      },
+      {
+        id: 'p2', slug: 'lyzarsky-zajezd-2027', name: 'Lyžařský zájezd 2027', category: 'Výjezd',
+        status: 'pripravujeme', demo: true, image: '',
+        summary: 'Týdenní zimní výjezd pro studenty všech ročníků.',
+        description: 'Lyžařský zájezd EVENTO spojuje sport, zážitek a partu. Připravujeme program, ubytování a dopravu tak, aby akce proběhla na profesionální úrovni.',
+        order: 2
+      },
+      {
+        id: 'p3', slug: 'sportovni-den-2025', name: 'Sportovní den 2025', category: 'Sport',
+        status: 'probehle', demo: true, image: '',
+        summary: 'Celoškolní sportovní turnaj napříč třídami.',
+        description: 'Sportovní den 2025 propojil třídy v sérii sportovních disciplín. Akci organizoval tým EVENTO od přípravy pravidel až po samotný průběh dne.',
+        order: 3
+      }
+    ],
+    team: Array.from({length:18}).map((_,i)=>({
+      id: 't'+(i+1),
+      name: 'Jméno Příjmení',
+      position: ['Vedení EVENTO','Marketing','Projekty','Finance','Sport','Eventy'][i % 6],
+      note: '',
+      photo: '',
+      order: i+1
+    }))
+  };
+}
+
+function getData(){
+  try{
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if(!raw){ const d = seedData(); localStorage.setItem(STORAGE_KEY, JSON.stringify(d)); return d; }
+    return JSON.parse(raw);
+  }catch(e){ const d = seedData(); return d; }
+}
+function saveData(d){
+  try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(d)); }catch(e){ showToast('Uložení se nezdařilo (úložiště prohlížeče je plné).'); }
+}
+function isAdmin(){ return sessionStorage.getItem(AUTH_KEY) === '1'; }
+
+const STATUS_LABEL = { aktualni:'Aktuální', pripravujeme:'Připravujeme', probehle:'Proběhlé' };
+const GRADIENTS = ['linear-gradient(160deg,#6D28D9,#1E0B3D)','linear-gradient(160deg,#4A1F8F,#1E0B3D)','linear-gradient(160deg,#2B0F55,#1E0B3D)','linear-gradient(160deg,#9333EA,#1E0B3D)'];
+function gradFor(id){ let h=0; for(const c of id) h+=c.charCodeAt(0); return GRADIENTS[h % GRADIENTS.length]; }
+
+function showToast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  clearTimeout(window._toastTimer);
+  window._toastTimer = setTimeout(()=>t.classList.remove('show'), 2200);
+}
+
+/* ================= ICONS ================= */
+const ICON_EDIT = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4 12.5-12.5z"/></svg>';
+const ICON_TRASH = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/></svg>';
+const ICON_UP = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>';
+const ICON_DOWN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14"/><path d="M19 12l-7 7-7-7"/></svg>';
+const ICON_MAIL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6l9 7 9-7M3 6h18v12H3V6z"/></svg>';
+
+/* ================= ROUTER ================= */
+function currentRoute(){
+  const hash = location.hash.replace(/^#\/?/, '');
+  return hash.split('/').filter(Boolean);
+}
+window.addEventListener('hashchange', render);
+window.addEventListener('DOMContentLoaded', render);
+
+function go(path){ location.hash = path; }
+
+function render(){
+  const parts = currentRoute();
+  const data = getData();
+  window.scrollTo(0,0);
+
+  if(parts[0] === 'admin'){
+    renderAdminChrome(parts, data);
+  } else {
+    renderPublicHeader(parts, data);
+    renderFooter();
+    renderPublicPage(parts, data);
+  }
+  observeReveals();
+}
+
+/* ================= PUBLIC CHROME ================= */
+function navItem(path, label, parts){
+  const active = (parts.length===0 && path==='') || (parts[0]===path && path!=='');
+  return `<a href="#/${path}" class="${active?'active':''}">${label}</a>`;
+}
+function renderPublicHeader(parts, data){
+  const ig = data.content.instagramUrl;
+  document.getElementById('header-slot').innerHTML = `
+  <header class="site-nav">
+    <div class="wrap">
+      <a href="#/" class="logo-lockup"><svg viewBox="0 0 56 56"><use href="#mark-color"/></svg>evento</a>
+      <nav class="nav-links">
+        ${navItem('', 'Domů', parts)}
+        ${navItem('co-delame', 'Co děláme', parts)}
+        ${navItem('projekty', 'Projekty', parts)}
+        ${navItem('tym', 'Tým', parts)}
+        ${navItem('kontakt', 'Kontakt', parts)}
+      </nav>
+      <div class="nav-right">
+        ${ig ? `<a href="${ig}" target="_blank" class="nav-ig" title="Instagram EVENTO">${ICON_replace('ig')}</a>` : ''}
+        <a href="#/kontakt" class="nav-cta">Kontaktovat EVENTO</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#/">Domů</a>
+      <a href="#/co-delame">Co děláme</a>
+      <a href="#/projekty">Projekty</a>
+      <a href="#/tym">Tým</a>
+      <a href="#/kontakt">Kontakt</a>
+    </div>
+  </header>`;
+  const toggle = document.getElementById('navToggle');
+  if(toggle){ toggle.addEventListener('click', ()=>{ document.getElementById('mobileMenu').classList.toggle('open'); }); }
+}
+function ICON_replace(){ return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="2" width="16" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17" cy="7" r="1" fill="currentColor"/></svg>'; }
+
+function renderFooter(){
+  const data = getData();
+  document.getElementById('footer-slot').innerHTML = `
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <a href="#/" class="logo-lockup" style="color:var(--white)"><svg viewBox="0 0 56 56"><use href="#mark-color-dark"/></svg>evento</a>
+        <p style="margin-top:8px">Studentská firma · ${data.content.contactEmail}</p>
+      </div>
+      <div class="foot-links">
+        <a href="#/co-delame">Co děláme</a>
+        <a href="#/projekty">Projekty</a>
+        <a href="#/tym">Tým</a>
+        <a href="#/kontakt">Kontakt</a>
+      </div>
+      <p>© EVENTO — studentská firma</p>
+    </div>
+  </footer>`;
+}
+
+/* ================= PUBLIC PAGES ================= */
+function renderPublicPage(parts, data){
+  const el = document.getElementById('page');
+  if(parts.length===0){ el.innerHTML = pageHome(data); attachHomeEvents(); return; }
+  if(parts[0]==='co-delame'){ el.innerHTML = pageCoDelame(data); return; }
+  if(parts[0]==='projekty' && !parts[1]){ el.innerHTML = pageProjekty(data); attachProjektyEvents(data); return; }
+  if(parts[0]==='projekty' && parts[1]){ el.innerHTML = pageProjektDetail(data, parts[1]); return; }
+  if(parts[0]==='tym'){ el.innerHTML = pageTym(data); return; }
+  if(parts[0]==='kontakt'){ el.innerHTML = pageKontakt(data); return; }
+  el.innerHTML = `<section><div class="wrap"><h1>Stránka nenalezena</h1><p style="margin-top:14px"><a class="link-btn" href="#/">Zpět na domů →</a></p></div></section>`;
+}
+
+function pageHome(data){
+  const topProjects = [...data.projects].sort((a,b)=>a.order-b.order).slice(0,3);
+  return `
+  <section class="hero">
+    <div class="hero-bg">
+      <svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 1200 700" style="position:absolute;inset:0">
+        <polygon points="720,700 920,700 1200,60 1020,60" fill="#2B0F55"/>
+        <polygon points="960,700 1060,700 1200,260 1100,260" fill="#3B1478"/>
+      </svg>
+    </div>
+    <div class="wrap">
+      <div class="hero-kicker">Studentská firma · EVENTO</div>
+      <h1>EVENTO</h1>
+      <div class="hero-claim">${esc(data.content.claim)}</div>
+      <p class="hero-sub">${esc(data.content.heroText)}</p>
+      <div class="hero-cta">
+        <a href="#/co-delame" class="btn btn-light">Poznat EVENTO</a>
+        <a href="#/projekty" class="btn btn-outline" style="border-color:rgba(255,255,255,0.35);color:var(--white)">Naše projekty</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Co děláme</div>
+        <h2>Aktivity, které EVENTO zastřešuje</h2>
+        <p>${esc(data.content.coDelameText)}</p>
+      </div>
+      <div class="cards-grid">
+        ${activityCard('Sport','Sportovní soutěže','Turnaje a sportovní klání napříč třídami a ročníky.','linear-gradient(160deg,#2B0F55,#1E0B3D 75%)')}
+        ${activityCard('Akce','Školní a společenské akce','Zahájení školního roku, plesy a další společné momenty.','linear-gradient(160deg,#6D28D9,#1E0B3D 80%)')}
+        ${activityCard('Business','Soutěže a projekty','Ekonomická hra a další formáty, kde studenti tvoří i řídí.','linear-gradient(160deg,#4A1F8F,#1E0B3D 75%)')}
+        ${activityCard('Výjezdy','Studentské projekty','Zážitkové výjezdy a nové iniciativy během roku.','linear-gradient(160deg,#1E0B3D,#2B0F55 80%)')}
+      </div>
+      <div class="section-cta reveal"><a href="#/co-delame" class="link-btn">Více o tom, co děláme →</a></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Projekty</div>
+        <h2>Aktuální i proběhlé projekty</h2>
+        <p>Ukázka projektů EVENTO — kompletní přehled najdete na stránce Projekty.</p>
+      </div>
+      <div class="proj-grid">${topProjects.map(projectCard).join('')}</div>
+      <div class="section-cta reveal"><a href="#/projekty" class="link-btn">Zobrazit všechny projekty →</a></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Tým</div>
+        <h2>Lidé, kteří stojí za EVENTO</h2>
+        <p>EVENTO tvoří 18členný studentský tým rozdělený do jednotlivých oblastí.</p>
+      </div>
+      <div class="team-grid">${[...data.team].sort((a,b)=>a.order-b.order).slice(0,6).map(teamCard).join('')}</div>
+      <div class="section-cta reveal"><a href="#/tym" class="link-btn">Poznat celý tým →</a></div>
+    </div>
+  </section>
+
+  ${kontaktSection(data)}
+  `;
+}
+function activityCard(tag,title,desc,bg){
+  return `<div class="work-card reveal"><div class="bg" style="background:${bg}"></div><div class="tag">${tag}</div><h3>${title}</h3><p>${desc}</p><div class="cta-arrow">Zjistit více →</div></div>`;
+}
+function attachHomeEvents(){}
+
+function pageCoDelame(data){
+  return `
+  <section class="page-header">
+    <div class="wrap">
+      <div class="eyebrow">Co děláme</div>
+      <h1>Aktivity, které dávají studentskému životu úroveň</h1>
+      <p>${esc(data.content.coDelameText)}</p>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="cards-grid">
+        ${activityCard('Sport','Sportovní soutěže','Turnaje a sportovní klání napříč třídami a ročníky — od přípravy pravidel po samotný průběh dne.','linear-gradient(160deg,#2B0F55,#1E0B3D 75%)')}
+        ${activityCard('Akce','Školní a společenské akce','Zahájení školního roku, plesy a další momenty, které si škola pamatuje.','linear-gradient(160deg,#6D28D9,#1E0B3D 80%)')}
+        ${activityCard('Business','Ekonomická hra a soutěže','Simulace podnikání a další formáty, kde studenti tvoří i řídí.','linear-gradient(160deg,#4A1F8F,#1E0B3D 75%)')}
+        ${activityCard('Výjezdy','Lyžařský zájezd a projekty','Zážitkové výjezdy a nové studentské iniciativy během roku.','linear-gradient(160deg,#1E0B3D,#2B0F55 80%)')}
+      </div>
+      <div class="section-cta"><a href="#/projekty" class="btn btn-primary">Zobrazit projekty</a></div>
+    </div>
+  </section>`;
+}
+
+function pageProjekty(data){
+  return `
+  <section class="page-header">
+    <div class="wrap">
+      <div class="eyebrow">Projekty</div>
+      <h1>Naše projekty</h1>
+      <p>Přehled toho, na čem právě pracujeme, co se chystá a co se nám už povedlo zorganizovat. Obsah níže je zatím demonstrační a bude postupně nahrazen reálnými projekty.</p>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="filter-row" id="filterRow">
+        <button class="filter-chip active" data-status="all">Vše</button>
+        <button class="filter-chip" data-status="aktualni">Aktuální</button>
+        <button class="filter-chip" data-status="pripravujeme">Připravujeme</button>
+        <button class="filter-chip" data-status="probehle">Proběhlé</button>
+      </div>
+      <div class="proj-grid" id="projGrid">${[...data.projects].sort((a,b)=>a.order-b.order).map(projectCard).join('')}</div>
+    </div>
+  </section>`;
+}
+function attachProjektyEvents(data){
+  const row = document.getElementById('filterRow');
+  if(!row) return;
+  row.addEventListener('click', (e)=>{
+    const btn = e.target.closest('.filter-chip'); if(!btn) return;
+    row.querySelectorAll('.filter-chip').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const status = btn.dataset.status;
+    const list = status==='all' ? data.projects : data.projects.filter(p=>p.status===status);
+    document.getElementById('projGrid').innerHTML = [...list].sort((a,b)=>a.order-b.order).map(projectCard).join('') || `<div class="empty-state" style="grid-column:1/-1">Žádné projekty v této kategorii.</div>`;
+  });
+}
+function projectCard(p){
+  const bg = p.image ? `background-image:url('${p.image}')` : `background:${gradFor(p.id)}`;
+  return `
+  <a href="#/projekty/${p.slug}" class="proj-card">
+    <div class="proj-media" style="${bg}">
+      <span class="proj-status">${STATUS_LABEL[p.status]||p.status}</span>
+      ${p.demo ? `<span class="proj-demo">Demo obsah</span>` : ''}
+    </div>
+    <div class="proj-body">
+      <div class="cat">${esc(p.category)}</div>
+      <h4>${esc(p.name)}</h4>
+      <p>${esc(p.summary)}</p>
+      <span class="link-btn">Zobrazit projekt →</span>
+    </div>
+  </a>`;
+}
+
+function pageProjektDetail(data, slug){
+  const p = data.projects.find(x=>x.slug===slug);
+  if(!p){
+    return `<section><div class="wrap"><h1>Projekt nenalezen</h1><p style="margin-top:14px"><a class="link-btn" href="#/projekty">Zpět na projekty →</a></p></div></section>`;
+  }
+  const bg = p.image ? `background-image:url('${p.image}')` : `background:${gradFor(p.id)}`;
+  return `
+  <section class="detail-hero" style="${bg}">
+    <div class="wrap">
+      <a href="#/projekty" class="back-link">← Zpět na projekty</a>
+      <h1>${esc(p.name)}</h1>
+      <div class="detail-meta">
+        <span>${esc(p.category)}</span>
+        <span>${STATUS_LABEL[p.status]||p.status}</span>
+        ${p.demo ? `<span>Demo obsah</span>` : ''}
+      </div>
+    </div>
+  </section>
+  <div class="detail-body">
+    <p style="font-family:var(--font-display);font-size:1.3rem;color:var(--navy)">${esc(p.summary)}</p>
+    <p>${esc(p.description)}</p>
+  </div>
+  ${kontaktSection(data)}
+  `;
+}
+
+function pageTym(data){
+  const members = [...data.team].sort((a,b)=>a.order-b.order);
+  return `
+  <section class="page-header">
+    <div class="wrap">
+      <div class="eyebrow">Tým</div>
+      <h1>Tým EVENTO</h1>
+      <p>EVENTO tvoří studentský tým, který stojí za jednotlivými projekty, jejich přípravou a realizací.</p>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="team-grid">${members.map(teamCard).join('')}</div>
+      <div class="teacher-note">Vedoucím pedagogem studentské firmy EVENTO je <b>jméno vyučujícího</b> — pedagogický dohled a metodická podpora týmu.</div>
+    </div>
+  </section>`;
+}
+function teamCard(m){
+  const bg = m.photo ? `background-image:url('${m.photo}')` : `background:${gradFor(m.id)}`;
+  return `<div class="team-card" style="${bg}"><div class="meta"><b>${esc(m.name)}</b><span>${esc(m.position)}</span></div></div>`;
+}
+
+function kontaktSection(data){
+  const ig = data.content.instagramUrl;
+  return `
+  <section class="contact-section">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div>
+          <div class="section-head reveal">
+            <div class="eyebrow" style="color:var(--sky)">Kontakt</div>
+            <h2>Máte nápad? Ozvěte se EVENTU.</h2>
+            <p>Ať už jste student, rodič, vedení školy nebo firma se zájmem o spolupráci — jsme tu pro vás.</p>
+          </div>
+          <div class="contact-list">
+            <div class="contact-item">${ICON_MAIL}<a href="mailto:${data.content.contactEmail}">${esc(data.content.contactEmail)}</a></div>
+          </div>
+          <div class="hero-cta" style="margin-top:36px"><a href="mailto:${data.content.contactEmail}" class="btn btn-light">Kontaktovat EVENTO</a></div>
+        </div>
+        <div class="ig-block">
+          <svg viewBox="0 0 56 56" style="width:40px;height:40px;margin:0 auto 18px;color:var(--sky)"><use href="#mark-color-dark"/></svg>
+          <h3>Instagram EVENTO</h3>
+          ${ig
+            ? `<p>Nejnovější fotky a zákulisí EVENTO.</p><a href="${ig}" target="_blank" class="btn btn-outline" style="border-color:rgba(255,255,255,0.35);color:var(--white)">Otevřít Instagram</a>`
+            : `<p>Účet zatím není definitivně určen. Jakmile bude EVENTO Instagram spuštěný, odkaz se objeví zde.</p><span class="btn btn-outline" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.4);cursor:not-allowed">Brzy k dispozici</span>`
+          }
+        </div>
+      </div>
+    </div>
+  </section>`;
+}
+
+function pageKontakt(data){
+  return `
+  <section class="page-header contact-section" style="padding-top:150px">
+    <div class="wrap">
+      <div class="eyebrow" style="color:var(--sky)">Kontakt</div>
+      <h1>Máte nápad? Ozvěte se EVENTU.</h1>
+      <p>Ať už jste student, rodič, vedení školy nebo firma se zájmem o spolupráci — jsme tu pro vás.</p>
+    </div>
+  </section>
+  <section class="contact-section" style="padding-top:70px">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div>
+          <div class="contact-list">
+            <div class="contact-item">${ICON_MAIL}<a href="mailto:${data.content.contactEmail}">${esc(data.content.contactEmail)}</a></div>
+          </div>
+          <div class="hero-cta" style="margin-top:36px"><a href="mailto:${data.content.contactEmail}" class="btn btn-light">Napsat e-mail</a></div>
+        </div>
+        <div class="ig-block">
+          <svg viewBox="0 0 56 56" style="width:40px;height:40px;margin:0 auto 18px;color:var(--sky)"><use href="#mark-color-dark"/></svg>
+          <h3>Instagram EVENTO</h3>
+          ${data.content.instagramUrl
+            ? `<p>Nejnovější fotky a zákulisí EVENTO.</p><a href="${data.content.instagramUrl}" target="_blank" class="btn btn-outline" style="border-color:rgba(255,255,255,0.35);color:var(--white)">Otevřít Instagram</a>`
+            : `<p>Účet zatím není definitivně určen. Jakmile bude EVENTO Instagram spuštěný, odkaz se objeví zde.</p>`
+          }
+        </div>
+      </div>
+
+      <div style="margin-top:90px">
+        <h3 style="color:var(--white);font-size:1.1rem;margin-bottom:24px;text-align:center;">Organizační struktura</h3>
+        <div class="org-flow">
+          <div class="org-step" style="background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.15)"><b style="color:var(--white)">Vedení</b><span style="color:rgba(255,255,255,0.6)">Strategie a zastřešení EVENTO</span></div>
+          <div class="org-arrow">→</div>
+          <div class="org-step" style="background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.15)"><b style="color:var(--white)">Oblasti / týmy</b><span style="color:rgba(255,255,255,0.6)">Marketing, projekty, finance, sport</span></div>
+          <div class="org-arrow">→</div>
+          <div class="org-step" style="background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.15)"><b style="color:var(--white)">Členové EVENTO</b><span style="color:rgba(255,255,255,0.6)">18 studentů napříč ročníky</span></div>
+        </div>
+      </div>
+    </div>
+  </section>`;
+}
+
+function esc(s){ return (s||'').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+function observeReveals(){
+  const els = document.querySelectorAll('.reveal:not(.in)');
+  if(!('IntersectionObserver' in window)){ els.forEach(e=>e.classList.add('in')); return; }
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, {threshold:0.12});
+  els.forEach(e=>io.observe(e));
+}
+
+/* ================= ADMIN ================= */
+function renderAdminChrome(parts, data){
+  document.getElementById('footer-slot').innerHTML = '';
+  if(!isAdmin()){
+    document.getElementById('header-slot').innerHTML = `
+    <div class="admin-bar"><div class="wrap"><a href="#/" class="logo-lockup"><svg viewBox="0 0 56 56"><use href="#mark-color-dark"/></svg>evento admin</a><div class="admin-bar-right"><a href="#/">← Zpět na web</a></div></div></div>`;
+    document.getElementById('page').innerHTML = `
+    <div class="login-box">
+      <h2>Přihlášení do administrace</h2>
+      <p>Tato sekce slouží pouze vedení EVENTO. Zadejte přístupové heslo.</p>
+      <div class="field" style="text-align:left"><label>Heslo</label><input type="password" id="adminPass" placeholder="••••••••"></div>
+      <button class="btn btn-primary" style="width:100%;justify-content:center" id="loginBtn">Přihlásit se</button>
+      <p class="hint" style="margin-top:16px">Demo prototyp: jednoduchá ochrana pouze pro účely náhledu, ne produkční zabezpečení.</p>
+    </div>`;
+    const doLogin = ()=>{
+      const val = document.getElementById('adminPass').value;
+      if(val === ADMIN_PASSWORD){ sessionStorage.setItem(AUTH_KEY,'1'); go('admin'); }
+      else showToast('Nesprávné heslo.');
+    };
+    document.getElementById('loginBtn').addEventListener('click', doLogin);
+    document.getElementById('adminPass').addEventListener('keydown', e=>{ if(e.key==='Enter') doLogin(); });
+    return;
+  }
+
+  document.getElementById('header-slot').innerHTML = `
+  <div class="admin-bar"><div class="wrap">
+    <a href="#/admin" class="logo-lockup"><svg viewBox="0 0 56 56"><use href="#mark-color-dark"/></svg>evento admin</a>
+    <div class="admin-bar-right"><a href="#/">Zobrazit web</a><a href="#" id="logoutLink">Odhlásit se</a></div>
+  </div></div>`;
+  document.getElementById('logoutLink').addEventListener('click', (e)=>{ e.preventDefault(); sessionStorage.removeItem(AUTH_KEY); go('admin'); });
+
+  const tab = parts[1] || 'dashboard';
+  const el = document.getElementById('page');
+  el.innerHTML = `
+  <div class="admin-shell">
+    <div class="admin-side">
+      <a href="#/admin" class="${tab==='dashboard'?'active':''}">Dashboard</a>
+      <a href="#/admin/projekty" class="${tab==='projekty'?'active':''}">Projekty</a>
+      <a href="#/admin/tym" class="${tab==='tym'?'active':''}">Tým</a>
+      <a href="#/admin/obsah" class="${tab==='obsah'?'active':''}">Obsah webu</a>
+    </div>
+    <div class="admin-main" id="adminMain"></div>
+  </div>`;
+  const main = document.getElementById('adminMain');
+  if(tab==='dashboard') main.innerHTML = adminDashboard(data);
+  else if(tab==='projekty'){ main.innerHTML = adminProjekty(data); attachAdminProjektyEvents(); }
+  else if(tab==='tym'){ main.innerHTML = adminTym(data); attachAdminTymEvents(); }
+  else if(tab==='obsah'){ main.innerHTML = adminObsah(data); attachAdminObsahEvents(); }
+}
+
+function adminDashboard(data){
+  const photoCount = data.projects.filter(p=>p.image).length + data.team.filter(t=>t.photo).length;
+  return `
+  <h2>EVENTO Admin</h2>
+  <p class="sub">Přehled obsahu webu.</p>
+  <div class="stat-grid">
+    <div class="stat-card"><span>${data.projects.length}</span><small>Projektů</small></div>
+    <div class="stat-card"><span>${data.team.length}</span><small>Členů týmu</small></div>
+    <div class="stat-card"><span>${photoCount}</span><small>Nahraných fotografií</small></div>
+  </div>
+  <div class="quick-actions">
+    <a href="#/admin/projekty" class="btn btn-primary btn-sm">+ Přidat projekt</a>
+    <a href="#/admin/tym" class="btn btn-outline btn-sm">+ Přidat člena</a>
+    <a href="#/admin/obsah" class="btn btn-outline btn-sm">Upravit texty webu</a>
+  </div>`;
+}
+
+/* --- Projekty --- */
+function slugify(s){ return s.toLowerCase().trim()
+  .replace(/[áàäâ]/g,'a').replace(/[éěèë]/g,'e').replace(/[íìï]/g,'i').replace(/[óòö]/g,'o').replace(/[úůù]/g,'u')
+  .replace(/ý/g,'y').replace(/č/g,'c').replace(/ď/g,'d').replace(/ň/g,'n').replace(/ř/g,'r').replace(/š/g,'s').replace(/ť/g,'t').replace(/ž/g,'z')
+  .replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,''); }
+
+function adminProjekty(data){
+  const list = [...data.projects].sort((a,b)=>a.order-b.order);
+  return `
+  <h2>Projekty</h2>
+  <p class="sub">Vytvářejte, upravujte a řaďte projekty zobrazené na webu.</p>
+  <button class="btn btn-primary btn-sm" id="newProjectBtn">+ Přidat projekt</button>
+  <div id="projectFormSlot" style="margin-top:24px"></div>
+  <table class="admin-table" style="margin-top:28px">
+    <tr><th></th><th>Název</th><th>Kategorie</th><th>Stav</th><th></th></tr>
+    ${list.map((p,i)=>`
+    <tr>
+      <td><div class="row-thumb" style="${p.image?`background-image:url('${p.image}')`:`background:${gradFor(p.id)}`}"></div></td>
+      <td>${esc(p.name)}${p.demo?' <span class="badge">demo</span>':''}</td>
+      <td>${esc(p.category)}</td>
+      <td><span class="badge">${STATUS_LABEL[p.status]}</span></td>
+      <td>
+        <div class="row-actions">
+          <button class="icon-btn" data-up="${p.id}" title="Nahoru" ${i===0?'disabled':''}>${ICON_UP}</button>
+          <button class="icon-btn" data-down="${p.id}" title="Dolů" ${i===list.length-1?'disabled':''}>${ICON_DOWN}</button>
+          <button class="icon-btn" data-edit="${p.id}" title="Upravit">${ICON_EDIT}</button>
+          <button class="icon-btn" data-del="${p.id}" title="Smazat">${ICON_TRASH}</button>
+        </div>
+      </td>
+    </tr>`).join('')}
+  </table>`;
+}
+function projectFormHtml(p){
+  const isEdit = !!p;
+  p = p || {id:'', name:'', category:'', status:'aktualni', summary:'', description:'', image:'', demo:false};
+  return `
+  <div class="form-card">
+    <h3>${isEdit?'Upravit projekt':'Nový projekt'}</h3>
+    <div class="field-row">
+      <div class="field"><label>Název projektu</label><input id="f_name" value="${escAttr(p.name)}"></div>
+      <div class="field"><label>Kategorie</label><input id="f_category" value="${escAttr(p.category)}" placeholder="např. Sport, Business, Výjezd"></div>
+    </div>
+    <div class="field"><label>Stav</label>
+      <select id="f_status">
+        <option value="aktualni" ${p.status==='aktualni'?'selected':''}>Aktuální</option>
+        <option value="pripravujeme" ${p.status==='pripravujeme'?'selected':''}>Připravujeme</option>
+        <option value="probehle" ${p.status==='probehle'?'selected':''}>Proběhlé</option>
+      </select>
+    </div>
+    <div class="field"><label>Krátký popis (na kartě)</label><textarea id="f_summary" style="min-height:60px">${escAttr(p.summary)}</textarea></div>
+    <div class="field"><label>Detailní popis (na stránce projektu)</label><textarea id="f_description">${escAttr(p.description)}</textarea></div>
+    <div class="field">
+      <label>Hlavní fotografie</label>
+      <div class="upload-row">
+        <div class="upload-preview" id="f_preview" style="${p.image?`background-image:url('${p.image}')`:''}"></div>
+        <input type="file" id="f_image" accept="image/*">
+      </div>
+      <div class="hint">Volitelné — bez fotografie se použije brandový barevný podklad.</div>
+    </div>
+    <div class="field"><label><input type="checkbox" id="f_demo" ${p.demo?'checked':''} style="width:auto;margin-right:8px"> Označit jako demonstrační obsah</label></div>
+    <div class="form-actions">
+      <button class="btn btn-primary btn-sm" id="saveProjectBtn">Uložit projekt</button>
+      <button class="btn btn-outline btn-sm" id="cancelProjectBtn">Zrušit</button>
+    </div>
+  </div>`;
+}
+function escAttr(s){ return esc(s); }
+
+function attachAdminProjektyEvents(){
+  const data = getData();
+  let editingImage = null;
+
+  document.getElementById('newProjectBtn').addEventListener('click', ()=>openProjectForm(null));
+
+  document.querySelectorAll('[data-edit]').forEach(b=>b.addEventListener('click', ()=>{
+    const p = data.projects.find(x=>x.id===b.dataset.edit); openProjectForm(p);
+  }));
+  document.querySelectorAll('[data-del]').forEach(b=>b.addEventListener('click', ()=>{
+    if(!confirm('Opravdu smazat tento projekt?')) return;
+    const d = getData(); d.projects = d.projects.filter(x=>x.id!==b.dataset.del); saveData(d);
+    showToast('Projekt smazán.'); render();
+  }));
+  document.querySelectorAll('[data-up]').forEach(b=>b.addEventListener('click', ()=>moveItem('projects', b.dataset.up, -1)));
+  document.querySelectorAll('[data-down]').forEach(b=>b.addEventListener('click', ()=>moveItem('projects', b.dataset.down, 1)));
+
+  function openProjectForm(p){
+    editingImage = p ? p.image : '';
+    document.getElementById('projectFormSlot').innerHTML = projectFormHtml(p);
+    document.getElementById('f_image').addEventListener('change', (e)=>{
+      const file = e.target.files[0]; if(!file) return;
+      const reader = new FileReader();
+      reader.onload = ()=>{ editingImage = reader.result; document.getElementById('f_preview').style.backgroundImage = `url('${editingImage}')`; };
+      reader.readAsDataURL(file);
+    });
+    document.getElementById('cancelProjectBtn').addEventListener('click', ()=>{ document.getElementById('projectFormSlot').innerHTML=''; });
+    document.getElementById('saveProjectBtn').addEventListener('click', ()=>{
+      const name = document.getElementById('f_name').value.trim();
+      if(!name){ showToast('Vyplňte název projektu.'); return; }
+      const d = getData();
+      const payload = {
+        name,
+        category: document.getElementById('f_category').value.trim() || 'Projekt',
+        status: document.getElementById('f_status').value,
+        summary: document.getElementById('f_summary').value.trim(),
+        description: document.getElementById('f_description').value.trim(),
+        image: editingImage || '',
+        demo: document.getElementById('f_demo').checked
+      };
+      if(p && p.id){
+        const idx = d.projects.findIndex(x=>x.id===p.id);
+        d.projects[idx] = {...d.projects[idx], ...payload};
+      } else {
+        let slug = slugify(name) || 'projekt';
+        let uniqueSlug = slug, n=2;
+        while(d.projects.some(x=>x.slug===uniqueSlug)){ uniqueSlug = slug+'-'+n; n++; }
+        const maxOrder = d.projects.reduce((m,x)=>Math.max(m,x.order||0),0);
+        d.projects.push({id:'p'+Date.now(), slug:uniqueSlug, order:maxOrder+1, ...payload});
+      }
+      saveData(d);
+      showToast('Projekt uložen.');
+      go('admin/projekty');
+    });
+  }
+}
+
+/* --- Tým --- */
+function adminTym(data){
+  const list = [...data.team].sort((a,b)=>a.order-b.order);
+  return `
+  <h2>Tým</h2>
+  <p class="sub">Spravujte členy studentského týmu EVENTO.</p>
+  <button class="btn btn-primary btn-sm" id="newMemberBtn">+ Přidat člena</button>
+  <div id="memberFormSlot" style="margin-top:24px"></div>
+  <table class="admin-table" style="margin-top:28px">
+    <tr><th></th><th>Jméno</th><th>Pozice</th><th></th></tr>
+    ${list.map((m,i)=>`
+    <tr>
+      <td><div class="row-thumb" style="${m.photo?`background-image:url('${m.photo}')`:`background:${gradFor(m.id)}`}"></div></td>
+      <td>${esc(m.name)}</td>
+      <td>${esc(m.position)}</td>
+      <td>
+        <div class="row-actions">
+          <button class="icon-btn" data-up="${m.id}" title="Nahoru" ${i===0?'disabled':''}>${ICON_UP}</button>
+          <button class="icon-btn" data-down="${m.id}" title="Dolů" ${i===list.length-1?'disabled':''}>${ICON_DOWN}</button>
+          <button class="icon-btn" data-edit="${m.id}" title="Upravit">${ICON_EDIT}</button>
+          <button class="icon-btn" data-del="${m.id}" title="Smazat">${ICON_TRASH}</button>
+        </div>
+      </td>
+    </tr>`).join('')}
+  </table>`;
+}
+function memberFormHtml(m){
+  const isEdit = !!m;
+  m = m || {id:'', name:'', position:'', note:'', photo:''};
+  return `
+  <div class="form-card">
+    <h3>${isEdit?'Upravit člena':'Nový člen týmu'}</h3>
+    <div class="field-row">
+      <div class="field"><label>Jméno a příjmení</label><input id="m_name" value="${escAttr(m.name)}"></div>
+      <div class="field"><label>Pozice</label><input id="m_position" value="${escAttr(m.position)}" placeholder="např. Marketing, Vedení"></div>
+    </div>
+    <div class="field"><label>Poznámka (volitelné)</label><textarea id="m_note" style="min-height:60px">${escAttr(m.note)}</textarea></div>
+    <div class="field">
+      <label>Fotografie</label>
+      <div class="upload-row">
+        <div class="upload-preview" id="m_preview" style="${m.photo?`background-image:url('${m.photo}')`:''}"></div>
+        <input type="file" id="m_photo" accept="image/*">
+      </div>
+    </div>
+    <div class="form-actions">
+      <button class="btn btn-primary btn-sm" id="saveMemberBtn">Uložit člena</button>
+      <button class="btn btn-outline btn-sm" id="cancelMemberBtn">Zrušit</button>
+    </div>
+  </div>`;
+}
+function attachAdminTymEvents(){
+  const data = getData();
+  let editingPhoto = null;
+  document.getElementById('newMemberBtn').addEventListener('click', ()=>openMemberForm(null));
+  document.querySelectorAll('[data-edit]').forEach(b=>b.addEventListener('click', ()=>{
+    const m = data.team.find(x=>x.id===b.dataset.edit); openMemberForm(m);
+  }));
+  document.querySelectorAll('[data-del]').forEach(b=>b.addEventListener('click', ()=>{
+    if(!confirm('Opravdu odstranit tohoto člena?')) return;
+    const d = getData(); d.team = d.team.filter(x=>x.id!==b.dataset.del); saveData(d);
+    showToast('Člen odstraněn.'); render();
+  }));
+  document.querySelectorAll('[data-up]').forEach(b=>b.addEventListener('click', ()=>moveItem('team', b.dataset.up, -1)));
+  document.querySelectorAll('[data-down]').forEach(b=>b.addEventListener('click', ()=>moveItem('team', b.dataset.down, 1)));
+
+  function openMemberForm(m){
+    editingPhoto = m ? m.photo : '';
+    document.getElementById('memberFormSlot').innerHTML = memberFormHtml(m);
+    document.getElementById('m_photo').addEventListener('change', (e)=>{
+      const file = e.target.files[0]; if(!file) return;
+      const reader = new FileReader();
+      reader.onload = ()=>{ editingPhoto = reader.result; document.getElementById('m_preview').style.backgroundImage = `url('${editingPhoto}')`; };
+      reader.readAsDataURL(file);
+    });
+    document.getElementById('cancelMemberBtn').addEventListener('click', ()=>{ document.getElementById('memberFormSlot').innerHTML=''; });
+    document.getElementById('saveMemberBtn').addEventListener('click', ()=>{
+      const name = document.getElementById('m_name').value.trim();
+      if(!name){ showToast('Vyplňte jméno.'); return; }
+      const d = getData();
+      const payload = {
+        name,
+        position: document.getElementById('m_position').value.trim() || 'Člen týmu',
+        note: document.getElementById('m_note').value.trim(),
+        photo: editingPhoto || ''
+      };
+      if(m && m.id){
+        const idx = d.team.findIndex(x=>x.id===m.id);
+        d.team[idx] = {...d.team[idx], ...payload};
+      } else {
+        const maxOrder = d.team.reduce((mx,x)=>Math.max(mx,x.order||0),0);
+        d.team.push({id:'t'+Date.now(), order:maxOrder+1, ...payload});
+      }
+      saveData(d);
+      showToast('Člen uložen.');
+      go('admin/tym');
+    });
+  }
+}
+
+function moveItem(key, id, dir){
+  const d = getData();
+  const list = [...d[key]].sort((a,b)=>a.order-b.order);
+  const idx = list.findIndex(x=>x.id===id);
+  const swapIdx = idx+dir;
+  if(swapIdx<0 || swapIdx>=list.length) return;
+  const tmp = list[idx].order; list[idx].order = list[swapIdx].order; list[swapIdx].order = tmp;
+  d[key] = list;
+  saveData(d);
+  render();
+}
+
+/* --- Obsah --- */
+function adminObsah(data){
+  const c = data.content;
+  return `
+  <h2>Obsah webu</h2>
+  <p class="sub">Upravte základní texty webu bez zásahu do kódu.</p>
+  <div class="form-card">
+    <div class="field"><label>Hlavní claim (hero)</label><input id="c_claim" value="${escAttr(c.claim)}"></div>
+    <div class="field"><label>Hero text</label><textarea id="c_hero" style="min-height:70px">${escAttr(c.heroText)}</textarea></div>
+    <div class="field"><label>Text sekce „Co děláme“</label><textarea id="c_codelame">${escAttr(c.coDelameText)}</textarea></div>
+    <div class="field-row">
+      <div class="field"><label>Kontaktní e-mail</label><input id="c_email" value="${escAttr(c.contactEmail)}"></div>
+      <div class="field"><label>Instagram URL (volitelné)</label><input id="c_ig" value="${escAttr(c.instagramUrl)}" placeholder="https://instagram.com/..."></div>
+    </div>
+    <div class="form-actions">
+      <button class="btn btn-primary btn-sm" id="saveContentBtn">Uložit změny</button>
+    </div>
+  </div>`;
+}
+function attachAdminObsahEvents(){
+  document.getElementById('saveContentBtn').addEventListener('click', ()=>{
+    const d = getData();
+    d.content.claim = document.getElementById('c_claim').value.trim() || d.content.claim;
+    d.content.heroText = document.getElementById('c_hero').value.trim();
+    d.content.coDelameText = document.getElementById('c_codelame').value.trim();
+    d.content.contactEmail = document.getElementById('c_email').value.trim() || d.content.contactEmail;
+    d.content.instagramUrl = document.getElementById('c_ig').value.trim();
+    saveData(d);
+    showToast('Obsah uložen.');
+  });
+}
+</script>
+</body>
+</html>
