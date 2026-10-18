@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EVENTO | Studentská firma OA Heroldovy sady</title>
+<meta name="description" content="EVENTO je studentská firma Obchodní akademie Heroldovy sady. Organizujeme školní akce, soutěže a projekty studentů pro studenty. Společně tvoříme víc.">
+<link rel="canonical" href="https://evento.eu/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EVENTO">
+<meta property="og:title" content="EVENTO | Studentská firma OA Heroldovy sady">
+<meta property="og:description" content="Studentská firma, která organizuje školní akce, soutěže a projekty. Společně tvoříme víc.">
+<meta property="og:url" content="https://evento.eu/">
+<meta property="og:image" content="https://evento.eu/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="EVENTO | Studentská firma OA Heroldovy sady">
+<meta name="twitter:description" content="Studentská firma, která organizuje školní akce, soutěže a projekty. Společně tvoříme víc.">
+<meta name="twitter:image" content="https://evento.eu/og-image.jpg">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 56'%3E%3Cpolygon points='4,52 16,52 16,30 4,36' fill='%231E0B3D'/%3E%3Cpolygon points='22,52 34,52 34,18 22,26' fill='%236D28D9'/%3E%3Cpolygon points='40,52 52,52 52,6 40,16' fill='%239333EA'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1E0B3D; --royal:#6D28D9; --electric:#9333EA; --medium:#A855F7;
+    --sky:#DAB6FF; --ice:#FFFFFF; --white:#FFFFFF; --slate:#6B5C7D; --ink:#140A20;
+    --line:rgba(10,27,61,0.12); --danger:#C0392B;
+    --font-display:'Space Grotesk', sans-serif; --font-body:'Inter', sans-serif;
+  }
+  :root:not([data-theme="light"]){ --navy:#1E0B3D; --royal:#6D28D9; --electric:#9333EA; --medium:#A855F7; --sky:#DAB6FF; --ice:#FFFFFF; --white:#FFFFFF; --slate:#6B5C7D; --ink:#140A20; --line:rgba(10,27,61,0.12); }
+  :root[data-theme="dark"]{ --navy:#1E0B3D; --royal:#6D28D9; --electric:#9333EA; --medium:#A855F7; --sky:#DAB6FF; --ice:#FFFFFF; --white:#FFFFFF; --slate:#6B5C7D; --ink:#140A20; --line:rgba(10,27,61,0.12); }
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --navy:#1E0B3D; --royal:#6D28D9; --electric:#9333EA; --medium:#A855F7; --sky:#DAB6FF; --ice:#FFFFFF; --white:#FFFFFF; --slate:#6B5C7D; --ink:#140A20; --line:rgba(10,27,61,0.12); } }
+  *{box-sizing:border-box;}
+  html{overflow-anchor:none;}
+  body{margin:0;background:var(--white);color:var(--ink);font-family:var(--font-body);-webkit-font-smoothing:antialiased;}
+  img,svg{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;cursor:pointer;}
+  button{font-family:var(--font-body);cursor:pointer;}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 28px;}
+  section{padding:110px 0;}
+  section + section{border-top:1px solid var(--line);}
+  h1,h2,h3{font-family:var(--font-display);margin:0;color:var(--navy);}
+  p{line-height:1.65;color:var(--slate);margin:0;}
+  .eyebrow{font-weight:600;font-size:0.8rem;color:var(--royal);margin:0 0 14px;letter-spacing:0.01em;}
+  .section-head{max-width:640px;margin-bottom:52px;}
+  .section-head h2{font-size:clamp(2rem,3.4vw,2.8rem);letter-spacing:-0.01em;line-height:1.1;margin-bottom:16px;}
+  .section-head p{font-size:1.05rem;}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1;transform:none;}
+  .proj-grid > .reveal:nth-child(1){transition-delay:0ms;}
+  .proj-grid > .reveal:nth-child(2){transition-delay:80ms;}
+  .proj-grid > .reveal:nth-child(3){transition-delay:160ms;}
+  .dept-grid > .reveal:nth-child(1){transition-delay:0ms;}
+  .dept-grid > .reveal:nth-child(2){transition-delay:40ms;}
+  .dept-grid > .reveal:nth-child(3){transition-delay:80ms;}
+  .dept-grid > .reveal:nth-child(4){transition-delay:120ms;}
+  .dept-grid > .reveal:nth-child(5){transition-delay:160ms;}
+  .dept-grid > .reveal:nth-child(6){transition-delay:200ms;}
+
+  /* ACCESSIBILITY */
+  .skip-link{position:absolute;left:-9999px;top:0;background:var(--royal);color:var(--white);padding:12px 20px;border-radius:0 0 8px 0;z-index:999;font-weight:600;font-size:0.9rem;}
+  .skip-link:focus{left:0;}
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible{
+    outline:2px solid var(--royal); outline-offset:3px; border-radius:2px;
+  }
+  .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+
+  /* NAV */
+  header.site-nav{position:sticky;top:0;z-index:80;background:rgba(255,255,255,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  header.site-nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;gap:20px;}
+  .logo-lockup{display:flex;align-items:center;gap:9px;font-family:var(--font-display);font-weight:700;font-size:1.15rem;color:var(--navy);flex-shrink:0;}
+  .logo-lockup svg{width:26px;height:26px;flex-shrink:0;}
+  .nav-links{display:flex;align-items:center;gap:30px;}
+  .nav-links a{font-size:0.88rem;font-weight:500;color:var(--navy);position:relative;padding-bottom:4px;transition:color .2s ease;}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--royal);transition:width .25s cubic-bezier(.2,.8,.2,1);}
+  .nav-links a.active{color:var(--royal);}
+  .nav-links a.active::after{width:100%;}
+  .nav-links a:hover{color:var(--royal);}
+  .nav-links a:hover::after{width:100%;}
+  .nav-right{display:flex;align-items:center;gap:14px;flex-shrink:0;}
+  .nav-ig{width:34px;height:34px;min-width:34px;aspect-ratio:1/1;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--navy);flex-shrink:0;}
+  .nav-ig svg{width:16px;height:16px;flex-shrink:0;}
+  .nav-toggle{display:none;background:none;border:none;padding:6px;flex-shrink:0;}
+  .nav-toggle span{display:block;width:22px;height:2px;background:var(--navy);margin:5px 0;}
+  .mobile-menu{display:none;flex-direction:column;gap:2px;padding:10px 28px 20px;border-top:1px solid var(--line);background:var(--white);}
+  .mobile-menu a{padding:12px 0;font-size:0.95rem;font-weight:500;color:var(--navy);border-bottom:1px solid var(--line);}
+  .mobile-menu.open{display:flex;}
+  @media(max-width:860px){
+    .nav-links{display:none;}
+    .nav-toggle{display:block;}
+    header.site-nav .wrap{padding:16px 18px;gap:10px;}
+    .logo-lockup svg{width:30px;height:30px;}
+    .nav-right{gap:8px;}
+  }
+  @media(max-width:360px){
+    header.site-nav .wrap{padding:13px 12px;gap:6px;}
+    .logo-lockup{gap:5px;}
+    .logo-lockup svg{width:24px;height:24px;}
+    .logo-lockup{font-size:0.95rem;}
+    .nav-right{gap:5px;}
+    .nav-ig{width:27px;height:27px;min-width:27px;}
+    .nav-ig svg{width:12px;height:12px;}
+    .nav-toggle{padding:3px;}
+    .nav-toggle span{width:18px;margin:4px 0;}
+  }
+
+  /* BUTTONS */
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:0.92rem;padding:15px 28px;border-radius:30px;border:none;transition:transform .22s cubic-bezier(.2,.8,.2,1), box-shadow .22s ease, background .22s ease, color .22s ease;}
+  .btn-primary{background:var(--navy);color:var(--white);}
+  .btn-primary:hover{background:var(--royal);transform:translateY(-2px);box-shadow:0 14px 28px -14px rgba(30,11,61,0.45);}
+  .btn-light{background:var(--white);color:var(--navy);}
+  .btn-light:hover{transform:translateY(-2px);box-shadow:0 14px 28px -14px rgba(30,11,61,0.3);}
+  .btn-outline{background:transparent;color:var(--navy);border:1px solid var(--line);}
+  .btn-outline:hover{border-color:var(--royal);color:var(--royal);transform:translateY(-2px);}
+  .btn-sm{padding:9px 16px;font-size:0.8rem;border-radius:20px;}
+  .btn-danger{background:transparent;color:var(--danger);border:1px solid rgba(192,57,43,0.3);}
+  .btn-danger:hover{background:rgba(192,57,43,0.08);}
+  .link-btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:0.92rem;color:var(--royal);border-bottom:1px solid var(--royal);padding-bottom:2px;transition:gap .2s ease,color .2s ease;}
+  .link-btn:hover{gap:12px;color:var(--electric);}
+
+  /* HERO (home) */
+  .hero{background:var(--navy);color:var(--white);padding:180px 0 130px;position:relative;overflow:hidden;}
+  .hero .wrap{position:relative;z-index:2;}
+  .hero-bg{position:absolute;inset:0;z-index:1;opacity:0.55;}
+  .hero-kicker{color:var(--sky);font-weight:600;font-size:0.85rem;letter-spacing:0.03em;margin-bottom:24px;text-transform:uppercase;}
+  .hero h1{color:var(--white);font-size:clamp(3rem,7.6vw,5.8rem);line-height:0.95;letter-spacing:-0.03em;font-weight:700;max-width:900px;}
+  .hero-claim{font-family:var(--font-display);font-weight:600;font-size:clamp(1.3rem,2.2vw,1.8rem);color:var(--sky);margin-top:26px;}
+  .hero-sub{max-width:560px;margin-top:18px;color:rgba(255,255,255,0.72);font-size:1.02rem;}
+  .hero-cta{display:flex;gap:16px;margin-top:40px;flex-wrap:wrap;}
+
+  /* page header (non-home) */
+  .page-header{background:var(--navy);color:var(--white);padding:150px 0 70px;position:relative;overflow:hidden;}
+  .page-header::after{
+    content:""; position:absolute; inset:0; z-index:0; pointer-events:none; opacity:0.5;
+    background:
+      linear-gradient(80deg, transparent 62%, rgba(147,51,234,0.35) 100%),
+      linear-gradient(80deg, transparent 78%, rgba(109,40,217,0.4) 100%);
+  }
+  .page-header .wrap{position:relative;z-index:1;}
+  .page-header .eyebrow{color:var(--sky);}
+  .page-header h1{color:var(--white);font-size:clamp(2.2rem,4.5vw,3.4rem);letter-spacing:-0.01em;}
+  .page-header p{color:rgba(255,255,255,0.72);max-width:600px;margin-top:14px;font-size:1.02rem;}
+
+  /* CARDS: activities */
+  .cards-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+  .work-card{border-radius:14px;overflow:hidden;position:relative;min-height:300px;padding:32px;display:flex;flex-direction:column;justify-content:flex-end;color:var(--white);transition:transform .35s ease;}
+  .work-card:hover{transform:translateY(-4px);}
+  .work-card .bg{position:absolute;inset:0;z-index:0;transition:transform .5s ease;}
+  .work-card:hover .bg{transform:scale(1.05);}
+  .work-card > *:not(.bg){position:relative;z-index:1;}
+  .work-card h3{color:var(--white);font-size:1.5rem;margin-bottom:8px;}
+  .work-card p{color:rgba(255,255,255,0.78);font-size:0.92rem;max-width:380px;}
+  .work-card .tag{font-size:0.72rem;font-weight:600;color:var(--sky);text-transform:uppercase;letter-spacing:0.03em;margin-bottom:10px;}
+  .work-card .cta-arrow{margin-top:18px;font-size:0.85rem;font-weight:600;display:flex;align-items:center;gap:6px;transition:gap .25s ease;}
+  .work-card:hover .cta-arrow{gap:10px;}
+
+  /* AKCE (events) */
+  .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .proj-card{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--white);transition:box-shadow .3s ease, transform .3s ease;}
+  .proj-card:hover{box-shadow:0 18px 40px -22px rgba(10,27,61,0.35);transform:translateY(-3px);}
+  .proj-media{height:180px;position:relative;overflow:hidden;background-size:cover;background-position:center;transition:transform .5s cubic-bezier(.2,.8,.2,1);}
+  .proj-card:hover .proj-media{transform:scale(1.06);}
+  .proj-demo{position:absolute;top:14px;right:14px;font-size:0.62rem;font-weight:600;padding:4px 10px;border-radius:20px;background:rgba(10,27,61,0.55);color:var(--white);}
+  .proj-body{padding:20px 22px 24px;}
+  .proj-body .cat{font-size:0.72rem;color:var(--royal);font-weight:600;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.02em;}
+  .proj-body h4{font-size:1.1rem;color:var(--navy);margin-bottom:8px;font-family:var(--font-display);}
+  .proj-body p{font-size:0.85rem;margin-bottom:16px;}
+  .section-cta{margin-top:40px;text-align:center;}
+  .empty-state{border:1px dashed var(--line);border-radius:14px;padding:60px 30px;text-align:center;color:var(--slate);}
+
+  /* AKCE DETAIL */
+  .detail-hero{position:relative;color:var(--white);padding:180px 0 60px;background-size:cover;background-position:center;}
+  .detail-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(10,27,61,0.55), rgba(10,27,61,0.92));}
+  .detail-hero .wrap{position:relative;z-index:1;}
+  .detail-hero h1{color:var(--white);font-size:clamp(2.2rem,5vw,3.6rem);}
+  .detail-meta{display:flex;gap:14px;flex-wrap:wrap;margin-top:20px;}
+  .detail-meta span{font-size:0.78rem;font-weight:600;padding:7px 14px;border-radius:20px;background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.25);}
+  .detail-body{max-width:760px;margin:0 auto;padding:70px 28px;}
+  .detail-body p{font-size:1.05rem;margin-bottom:20px;}
+  .back-link{display:inline-flex;align-items:center;gap:6px;font-size:0.85rem;color:var(--sky);margin-bottom:20px;font-weight:600;}
+
+  /* ODDĚLENÍ (departments) */
+  .dept-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .dept-card{border-radius:14px;padding:30px 28px;color:var(--white);min-height:170px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;}
+  .dept-card h3{color:var(--white);font-size:1.25rem;margin-bottom:8px;}
+  .dept-card p{color:rgba(255,255,255,0.78);font-size:0.88rem;}
+  .dept-mono{position:absolute;top:20px;right:22px;font-family:var(--font-display);font-weight:700;font-size:1.6rem;color:rgba(255,255,255,0.3);}
+  .teacher-note{margin-top:48px;padding-top:36px;border-top:1px solid var(--line);color:var(--slate);font-size:0.9rem;}
+  .teacher-note b{color:var(--navy);}
+  .todo-pill{display:inline-block;font-size:0.65rem;font-weight:700;letter-spacing:0.03em;color:var(--royal);background:rgba(109,40,217,0.08);border:1px dashed var(--royal);padding:2px 8px;border-radius:6px;margin-left:6px;vertical-align:middle;}
+  @media(max-width:900px){ .dept-grid{grid-template-columns:repeat(2,1fr);} .proj-grid,.cards-grid{grid-template-columns:1fr;} }
+  @media(max-width:640px){ .dept-grid{grid-template-columns:1fr;} }
+
+  /* ORG */
+  .org-flow{display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap;margin-top:8px;}
+  .org-step{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:18px 26px;text-align:center;min-width:160px;}
+  .org-step b{display:block;font-family:var(--font-display);color:var(--navy);font-size:0.95rem;margin-bottom:4px;}
+  .org-step span{font-size:0.76rem;color:var(--slate);}
+  .org-arrow{color:var(--sky);font-size:1.4rem;padding:0 22px;}
+  @media(max-width:640px){ .org-flow{flex-direction:column;} .org-arrow{transform:rotate(90deg);padding:6px 0;} }
+
+  /* CONTACT */
+  .contact-section{background:var(--navy);color:var(--white);}
+  .contact-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center;}
+  .contact-section h2, .contact-section h1{color:var(--white);}
+  .contact-section .section-head p, .contact-section .page-header p{color:rgba(255,255,255,0.7);}
+  .contact-list{display:flex;flex-direction:column;gap:18px;margin-top:10px;}
+  .contact-item{display:flex;align-items:center;gap:14px;font-size:1rem;}
+  .contact-item svg{width:20px;height:20px;flex:none;color:var(--sky);}
+  .contact-item a{color:var(--white);font-weight:500;}
+  .contact-item a:hover{color:var(--sky);}
+  .ig-block{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);border-radius:16px;padding:36px;text-align:center;}
+  .ig-block h3{color:var(--white);font-size:1.3rem;margin-bottom:10px;}
+  .ig-block p{color:rgba(255,255,255,0.65);font-size:0.88rem;margin-bottom:22px;}
+  .ig-handle{display:block;font-family:var(--font-display);font-weight:600;color:var(--sky);margin-bottom:6px;}
+
+  @media(max-width:900px){ .contact-grid{grid-template-columns:1fr;} }
+
+  /* FOOTER */
+  footer.site-footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.12);padding:36px 0;}
+  footer.site-footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+  footer.site-footer p{color:rgba(255,255,255,0.5);font-size:0.8rem;}
+  footer.site-footer .foot-links{display:flex;gap:20px;flex-wrap:wrap;}
+  footer.site-footer .foot-links a{color:rgba(255,255,255,0.6);font-size:0.8rem;}
+  footer.site-footer .foot-links a:hover{color:var(--sky);}
+  footer.site-footer .foot-legal{width:100%;border-top:1px solid rgba(255,255,255,0.1);margin-top:20px;padding-top:16px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+  footer.site-footer .foot-legal a{color:rgba(255,255,255,0.45);font-size:0.74rem;}
+  footer.site-footer .foot-legal a:hover{color:var(--sky);}
+
+  /* 404 */
+  .notfound{background:var(--navy);color:var(--white);min-height:70vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:160px 0 100px;}
+  .notfound::after{content:"";position:absolute;inset:0;z-index:0;opacity:0.5;background:linear-gradient(80deg, transparent 62%, rgba(147,51,234,0.35) 100%);}
+  .notfound .wrap{position:relative;z-index:1;text-align:center;}
+  .notfound .big404{font-family:var(--font-display);font-weight:700;font-size:clamp(5rem,16vw,10rem);line-height:0.9;color:var(--sky);letter-spacing:-0.02em;}
+  .notfound h1{color:var(--white);font-size:clamp(1.6rem,3vw,2.2rem);margin-top:10px;}
+  .notfound p{color:rgba(255,255,255,0.7);margin-top:14px;max-width:480px;margin-left:auto;margin-right:auto;}
+  .notfound .hero-cta{justify-content:center;margin-top:36px;}
+
+  /* LEGAL */
+  .legal-body{max-width:760px;margin:0 auto;padding:70px 28px;}
+  .legal-body h2{font-size:1.3rem;margin-top:40px;margin-bottom:12px;}
+  .legal-body h2:first-child{margin-top:0;}
+  .legal-body p{margin-bottom:14px;font-size:0.96rem;}
+  .legal-todo{border:1px dashed var(--royal);background:rgba(109,40,217,0.05);border-radius:10px;padding:16px 18px;font-size:0.88rem;color:var(--navy);margin-bottom:14px;}
+  .legal-todo b{color:var(--royal);}
+
+  /* ===== ADMIN ===== */
+  .admin-bar{background:var(--navy);color:var(--white);padding:16px 0;}
+  .admin-bar .wrap{display:flex;justify-content:space-between;align-items:center;}
+  .admin-bar .logo-lockup{color:var(--white);}
+  .admin-bar-right{display:flex;gap:14px;align-items:center;font-size:0.82rem;}
+  .admin-bar-right a{color:rgba(255,255,255,0.75);}
+  .admin-bar-right a:hover{color:var(--white);}
+  .admin-shell{display:grid;grid-template-columns:220px 1fr;min-height:70vh;}
+  .admin-side{border-right:1px solid var(--line);padding:32px 20px;}
+  .admin-side a{display:block;padding:11px 14px;border-radius:8px;font-size:0.88rem;font-weight:500;color:var(--navy);margin-bottom:4px;}
+  .admin-side a.active{background:var(--ice);color:var(--royal);font-weight:600;}
+  .admin-side a:hover{background:var(--ice);}
+  .admin-main{padding:40px 40px 80px;}
+  .admin-main h2{font-size:1.6rem;margin-bottom:6px;}
+  .admin-main > p.sub{color:var(--slate);font-size:0.9rem;margin-bottom:32px;}
+  @media(max-width:800px){ .admin-shell{grid-template-columns:1fr;} .admin-side{display:flex;overflow-x:auto;border-right:none;border-bottom:1px solid var(--line);padding:16px 20px;gap:6px;} .admin-side a{white-space:nowrap;margin-bottom:0;} .admin-main{padding:28px 20px 60px;} }
+
+  .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:36px;}
+  .stat-card{border:1px solid var(--line);border-radius:12px;padding:22px;}
+  .stat-card span{display:block;font-family:var(--font-display);font-size:2rem;color:var(--navy);}
+  .stat-card small{color:var(--slate);font-size:0.8rem;}
+  .quick-actions{display:flex;gap:12px;flex-wrap:wrap;}
+  @media(max-width:640px){ .stat-grid{grid-template-columns:1fr;} }
+
+  .login-box{max-width:380px;margin:100px auto;padding:40px;border:1px solid var(--line);border-radius:14px;text-align:center;}
+  .login-box h2{margin-bottom:8px;}
+  .login-box p{margin-bottom:24px;font-size:0.88rem;}
+  .field{margin-bottom:18px;text-align:left;}
+  .field label{display:block;font-size:0.8rem;font-weight:600;color:var(--navy);margin-bottom:6px;}
+  .field label .req{color:var(--danger);}
+  .field input, .field textarea, .field select{width:100%;padding:11px 14px;border:1px solid var(--line);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;color:var(--ink);background:var(--white);}
+  .field textarea{resize:vertical;min-height:90px;}
+  .field input:focus, .field textarea:focus, .field select:focus{outline:none;border-color:var(--royal);}
+  .field.error input, .field.error textarea{border-color:var(--danger);}
+  .field .error-msg{color:var(--danger);font-size:0.76rem;margin-top:5px;display:none;}
+  .field.error .error-msg{display:block;}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .hint{font-size:0.76rem;color:var(--slate);margin-top:4px;}
+
+  table.admin-table{width:100%;border-collapse:collapse;margin-bottom:20px;}
+  table.admin-table th{text-align:left;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.03em;color:var(--slate);padding:10px 12px;border-bottom:1px solid var(--line);}
+  table.admin-table td{padding:12px;border-bottom:1px solid var(--line);font-size:0.88rem;vertical-align:middle;}
+  .row-thumb{width:44px;height:44px;border-radius:8px;background:linear-gradient(160deg,#4A1F8F,#1E0B3D);background-size:cover;background-position:center;}
+  .badge{font-size:0.68rem;font-weight:600;padding:4px 10px;border-radius:14px;background:var(--ice);color:var(--royal);text-transform:uppercase;border:1px solid var(--line);}
+  .row-actions{display:flex;gap:8px;}
+  .icon-btn{width:32px;height:32px;border-radius:8px;border:1px solid var(--line);background:var(--white);display:flex;align-items:center;justify-content:center;color:var(--navy);}
+  .icon-btn:hover{border-color:var(--royal);color:var(--royal);}
+  .icon-btn svg{width:15px;height:15px;}
+
+  .form-card{border:1px solid var(--line);border-radius:14px;padding:28px;margin-bottom:36px;background:var(--ice);}
+  .form-card h3{font-size:1.05rem;margin-bottom:18px;}
+  .form-actions{display:flex;gap:10px;margin-top:8px;align-items:center;}
+  .form-status{font-size:0.82rem;color:var(--slate);}
+  .upload-row{display:flex;align-items:center;gap:14px;}
+  .upload-preview{width:64px;height:64px;border-radius:10px;background:var(--sky);background-size:cover;background-position:center;flex:none;}
+
+  .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--navy);color:var(--white);padding:14px 22px;border-radius:30px;font-size:0.85rem;font-weight:500;opacity:0;pointer-events:none;transition:all .3s ease;z-index:200;}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+  .toast.toast-error{background:#7A2420;}
+</style>
+</head>
+<body>
+
+<a href="#page" class="skip-link">Přeskočit na obsah</a>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <g id="mark-color">
+      <polygon points="4,52 16,52 16,30 4,36" fill="#1E0B3D"/>
+      <polygon points="22,52 34,52 34,18 22,26" fill="#6D28D9"/>
+      <polygon points="40,52 52,52 52,6 40,16" fill="#9333EA"/>
+    </g>
+    <g id="mark-color-dark">
+      <polygon points="4,52 16,52 16,30 4,36" fill="#DAB6FF"/>
+      <polygon points="22,52 34,52 34,18 22,26" fill="#FFFFFF"/>
+      <polygon points="40,52 52,52 52,6 40,16" fill="#A855F7"/>
+    </g>
+    <g id="ig-icon">
+      <rect x="4" y="2" width="16" height="20" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <circle cx="17" cy="7" r="1" fill="currentColor"/>
+    </g>
+  </defs>
+</svg>
+
+<div id="header-slot"></div>
+<main id="page" tabindex="-1"></main>
+<div id="footer-slot"></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<noscript><div style="padding:40px;text-align:center;font-family:sans-serif">EVENTO web vyžaduje zapnutý JavaScript.</div></noscript>
+
+<script>
+/* ================= DATA LAYER ================= */
+// Bumped v2 -> v3 -> v4: event description/summary text rewritten (v4).
+// Any browser with older cached data re-seeds from current defaults instead
+// of silently keeping stale content. See final report — there is no
+// backend/database, so content lives in each visitor's browser until they
+// open the admin and change it themselves.
+const STORAGE_KEY = 'eventoData_v4';
+const AUTH_KEY = 'eventoAdminAuth';
+// Demo-only client-side password gate. This is NOT real security — see final
+// report. A production launch needs server-side authentication.
+const ADMIN_PASSWORD = 'evento2026';
+
+function seedData(){
+  return {
+    content: {
+      claim: 'Společně tvoříme víc.',
+      heroText: 'Studentská firma Obchodní akademie Heroldovy sady, která mění nápady ve skutečné akce a zážitky.',
+      coDelameText: 'EVENTO organizuje školní akce, soutěže a projekty, které dávají studentskému životu úroveň a řád. Staráme se o produkci, komunikaci a marketing akcí, na kterých se podílíme — od sportovních turnajů po vzdělávací a soutěžní projekty.',
+      contactEmail: 'Evento@heroldovysady.cz',
+      instagramHandle: '@evento_heroldky',
+      instagramUrl: 'https://www.instagram.com/evento_heroldky?stkn=bmh1MzF2eTlsZWtm',
+      pageTitle: 'EVENTO | Studentská firma OA Heroldovy sady',
+      metaDescription: 'EVENTO je studentská firma Obchodní akademie Heroldovy sady. Organizujeme školní akce, soutěže a projekty studentů pro studenty. Společně tvoříme víc.'
+    },
+    events: [
+      {
+        id: 'e1', slug: 'sportovni-den', name: 'Sportovní den', category: 'Sport',
+        placeholder: true, image: '',
+        summary: 'Celodenní sportovní klání, které spojí všechny třídy v duchu zdravé soutěživosti a společné zábavy.',
+        description: 'Sportovní den je akcí, na kterou se těší celá škola — jeden den plný pohybu, energie a přátelského soupeření mezi třídami. Místo obvyklých hodin čeká studenty pestrá škála disciplín, při kterých si každý najde svou roli, ať už je největší oporou týmu na hřišti, nebo tím, kdo spolužáky hlasitě povzbuzuje z postranní čáry.\n\nNejde přitom jen o to, kdo vyhraje. Sportovní den je především o společném zážitku — o chvílích, kdy se třída semkne za společný cíl, kdy si studenti navzájem pomáhají a kdy i menší úspěch chutná sladce, protože si ho užívá celý tým. Zdravá soutěživost tu jde ruku v ruce s radostí z pohybu a s atmosférou, která se jen těžko hledá v běžném školním dni. EVENTO se stará o to, aby celý den proběhl hladce — od rozpisu disciplín až po vyhlášení výsledků — a aby si z něj každý odnesl nejen unavené nohy, ale hlavně dobrou náladu a pár historek, které si bude s přáteli připomínat ještě dlouho potom.',
+        date: '', place: '', order: 1
+      },
+      {
+        id: 'e2', slug: 'lyzarsky-vyjezd', name: 'Lyžařský výjezd', category: 'Výjezd',
+        placeholder: true, image: '',
+        summary: 'Týden na horách spojující zimní sporty, zdokonalování dovedností a nezapomenutelné chvíle mimo lavice.',
+        description: 'Lyžařský výjezd patří mezi akce, na které studenti vzpomínají ještě dlouho po návratu domů. Hory, čerstvý sníh a dny strávené na sjezdovce nabízí úplně jiný druh zážitku, než na jaký jsou studenti zvyklí ze školních lavic — a právě to dělá tuto akci tak výjimečnou.\n\nAť už se někdo na lyže nebo snowboard postaví poprvé, nebo už má za sebou roky zkušeností, výjezd je především o postupném zlepšování. Studenti pracují na rovnováze, koordinaci i technice a postupně překonávají drobné obavy, které k novým výzvám na svahu patří. Součástí kurzu je i důraz na bezpečnost, aby si každý mohl zimní sporty užít s klidnou hlavou.\n\nMimo sjezdovku pak vznikají možná ještě silnější vzpomínky — večery strávené s kamarády, společné chvíle mimo běžný rozvrh a pocit party, která si prošla stejnou zimou plnou pohybu a čerstvého vzduchu. Lyžařský výjezd tak spojuje sportovní rozvoj s odpočinkem a zábavou způsobem, jaký běžný školní den nikdy nenabídne.',
+        date: '', place: '', order: 2
+      },
+      {
+        id: 'e5', slug: 'ucetni-hra', name: 'Účetní hra', category: 'Business',
+        placeholder: true, image: '',
+        summary: 'Vlastní vyvíjená hra EVENTO, která učí účetnictví zábavnou, praktickou formou.',
+        description: 'Účetní hra je projekt, na kterém uvnitř EVENTO pracuje celé samostatné oddělení — cílem je vytvořit hru, díky které se účetnictví přestane spojovat jen se suchými čísly a tabulkami. Místo toho má studentům ukázat, že účetní logika dává smysl i ve chvíli, kdy se promění v zábavnou výzvu.\n\nMyšlenka je jednoduchá: propojit teoretické znalosti s praktickým rozhodováním v herní podobě, kde se správný postup, pozornost k detailu a logické uvažování počítají stejně jako v reálné praxi. Hráči si tak mohou postupně ověřovat a upevňovat to, co se učí ve školních lavicích, aniž by to působilo jako další povinnost navíc.\n\nÚčetní hra je zatím ve vývoji a EVENTO na ní průběžně pracuje — od návrhu konceptu po jednotlivá herní pravidla. Jde o ukázku toho, že i zdánlivě suché téma může dostat podobu projektu, který baví, učí a ukazuje účetnictví jako praktickou, živou disciplínu, ne jen předmět v rozvrhu.',
+        date: '', place: '', order: 3
+      },
+      {
+        id: 'e3', slug: 'cyklisticky-vyjezd', name: 'Cyklistický výjezd', category: 'Výjezd',
+        placeholder: true, image: '',
+        summary: 'Výlet na kole spojující objevování nových míst, pohyb na čerstvém vzduchu a kus dobrodružství.',
+        description: 'Cyklistický výjezd je pozvánkou k pohybu, objevování a troše dobrodružství mimo zajeté koleje všedního dne. Místo pohledu z okna třídy čeká studenty cesta krajinou, kterou poznávají vlastním tempem a na vlastním kole — a s každým kilometrem roste nejen fyzická kondice, ale i chuť objevovat, co je za dalším kopcem.\n\nCyklistika na výjezdu prověří vytrvalost i schopnost poslouchat vlastní tělo, zároveň ale učí studenty orientovat se v terénu a spoléhat se na sebe i na ostatní. Na výletě totiž nikdo nejede sám — skupina drží pohromadě, pomáhá si v náročnějších úsecích a společně zdolává kilometry, které by samostatně zvládal každý jinak.\n\nPrávě tahle kombinace fyzické výzvy a vzájemné podpory dělá z cyklistického výjezdu akci, která v účastnících zanechává víc než jen unavené nohy. Je to zážitek z pohybu, z nových míst a ze společně zdolané trasy — radost z jízdy, která trvá i dlouho po tom, co kolo zaparkujete.',
+        date: '', place: '', order: 4
+      },
+      {
+        id: 'e4', slug: 'surfovy-kurz', name: 'Surfový kurz', category: 'Výjezd',
+        placeholder: true, image: '',
+        summary: 'Kurz, na kterém se studenti postaví na vlny, překonají obavy a odnesou si pořádnou dávku sebevědomí.',
+        description: 'Surfový kurz je výzvou úplně jiného druhu — mořem, vlnami a sportem, který většina studentů dosud zkoušela nanejvýš na dovolené. Stát poprvé na surfu uprostřed vln chce odvahu, a právě tenhle moment, kdy se počáteční nejistota promění v soustředění a pak v první úspěšný pokus, je na kurzu to nejcennější.\n\nSurfování totiž neučí jen rovnováhu a práci s prknem. Učí trpělivosti — protože ne každá vlna vyjde napoprvé — a schopnosti zvládat nové, nečekané situace s klidnou hlavou. Pády ke kurzu patří stejně jako smích, který po nich obvykle následuje, a s každým dalším pokusem roste sebevědomí, že i náročná výzva je zvládnutelná.\n\nBezpečnost a postupné zlepšování jsou při tom samozřejmostí — na kurz totiž nikdo nejede sám. Skupina se navzájem povzbuzuje a oslavuje společně i drobné pokroky, takže si každý účastník odnáší nejen nový sportovní zážitek, ale i pocit, že dokázal něco, do čeho se možná zprvu bál pustit.',
+        date: '', place: '', order: 5
+      }
+    ],
+    departments: [
+      { id: 'd1', name: 'Oddělení vývoje účetní hry', description: 'Pracujeme na tvorbě a rozvoji naší účetní hry.', order: 1 },
+      { id: 'd2', name: 'Oddělení sociálních sítí', description: 'Staráme se o náš Instagram, obsah a komunikaci s vámi.', order: 2 },
+      { id: 'd3', name: 'Sportovní oddělení', description: 'Organizujeme sportovní aktivity a podporujeme týmového ducha.', order: 3 },
+      { id: 'd4', name: 'Organizační oddělení', description: 'Plánujeme akce, koordinujeme jednotlivé úkoly a zajišťujeme, aby všechno proběhlo podle plánu.', order: 4 }
+    ]
+  };
+}
+
+function getData(){
+  try{
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if(!raw){ const d = seedData(); localStorage.setItem(STORAGE_KEY, JSON.stringify(d)); return d; }
+    const parsed = JSON.parse(raw);
+    // light migration guard: ensure both collections exist even if an older
+    // seed shape is present in someone's browser storage
+    if(!parsed.events) parsed.events = seedData().events;
+    if(!parsed.departments) parsed.departments = seedData().departments;
+    return parsed;
+  }catch(e){ const d = seedData(); return d; }
+}
+function saveData(d){
+  try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(d)); return true; }
+  catch(e){ showToast('Uložení se nezdařilo (úložiště prohlížeče je plné nebo blokované).', true); return false; }
+}
+function isAdmin(){ return sessionStorage.getItem(AUTH_KEY) === '1'; }
+
+const GRADIENTS = ['linear-gradient(160deg,#6D28D9,#1E0B3D)','linear-gradient(160deg,#4A1F8F,#1E0B3D)','linear-gradient(160deg,#2B0F55,#1E0B3D)','linear-gradient(160deg,#9333EA,#1E0B3D)'];
+function gradFor(id){ let h=0; for(const c of id) h+=c.charCodeAt(0); return GRADIENTS[h % GRADIENTS.length]; }
+
+function showToast(msg, isError){
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  t.classList.toggle('toast-error', !!isError);
+  clearTimeout(window._toastTimer);
+  window._toastTimer = setTimeout(()=>t.classList.remove('show'), 2600);
+}
+
+/* ================= ICONS ================= */
+const ICON_EDIT = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4 12.5-12.5z"/></svg>';
+const ICON_TRASH = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/></svg>';
+const ICON_UP = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>';
+const ICON_DOWN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14"/><path d="M19 12l-7 7-7-7"/></svg>';
+const ICON_MAIL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6l9 7 9-7M3 6h18v12H3V6z"/></svg>';
+
+/* ================= ROUTER ================= */
+const PUBLIC_ROUTES = ['', 'akce', 'tym', 'kontakt', 'ochrana-osobnich-udaju'];
+
+function currentRoute(){
+  const hash = location.hash.replace(/^#\/?/, '');
+  return hash.split('/').filter(Boolean);
+}
+if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
+
+window.addEventListener('hashchange', render);
+window.addEventListener('DOMContentLoaded', render);
+
+function go(path){
+  // Normalize to a consistent '#/...' form, and when the target route is the
+  // same one we're already on (e.g. refreshing a list after saving a form),
+  // the hash string won't actually change — so no 'hashchange' event would
+  // fire and the page would silently stay stale. Detect that case and
+  // re-render directly instead of relying on the event.
+  const normalized = '#/' + path.replace(/^#\/?/, '');
+  if (location.hash === normalized) {
+    render();
+  } else {
+    location.hash = normalized;
+  }
+}
+
+function render(){
+  const parts = currentRoute();
+  const data = getData();
+
+  if(parts[0] === 'admin'){
+    renderAdminChrome(parts, data);
+  } else {
+    renderPublicHeader(parts, data);
+    renderFooter();
+    renderPublicPage(parts, data);
+  }
+  observeReveals();
+  applyDocumentMeta(data);
+
+  // Scroll to top only after the new page has been laid out, and do it
+  // instantly (not animated) so a route change can never be left mid-scroll.
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => { window.scrollTo({top:0, left:0, behavior:'instant'}); });
+  });
+}
+
+// Best-effort client-side title update. NOTE: this does not help search
+// engines or link-preview crawlers, which read the static <title>/<meta>
+// from the initial HTML only (no JS execution) — true per-page SEO needs
+// server-side rendering. See final report.
+function applyDocumentMeta(data){
+  if(data.content.pageTitle) document.title = data.content.pageTitle;
+}
+
+/* ================= PUBLIC CHROME ================= */
+function navItem(path, label, parts){
+  const active = (parts.length===0 && path==='') || (parts[0]===path && path!=='');
+  return `<a href="#/${path}" class="${active?'active':''}" ${active?'aria-current="page"':''}>${label}</a>`;
+}
+function renderPublicHeader(parts, data){
+  const ig = data.content.instagramUrl;
+  document.getElementById('header-slot').innerHTML = `
+  <header class="site-nav">
+    <div class="wrap">
+      <a href="#/" class="logo-lockup"><svg viewBox="0 0 56 56" aria-hidden="true"><use href="#mark-color"/></svg>evento</a>
+      <nav class="nav-links" aria-label="Hlavní navigace">
+        ${navItem('', 'Domů', parts)}
+        ${navItem('akce', 'Akce', parts)}
+        ${navItem('tym', 'Tým', parts)}
+        ${navItem('kontakt', 'Kontakt', parts)}
+      </nav>
+      <div class="nav-right">
+        ${ig ? `<a href="${ig}" target="_blank" rel="noopener noreferrer" class="nav-ig" aria-label="Instagram EVENTO (otevře se v nové záložce)" title="Instagram EVENTO">${ICON_replace('ig')}</a>` : ''}
+        <button class="nav-toggle" id="navToggle" aria-label="Otevřít menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Mobilní navigace">
+      <a href="#/">Domů</a>
+      <a href="#/akce">Akce</a>
+      <a href="#/tym">Tým</a>
+      <a href="#/kontakt">Kontakt</a>
+    </nav>
+  </header>`;
+  const toggle = document.getElementById('navToggle');
+  if(toggle){
+    toggle.addEventListener('click', ()=>{
+      const menu = document.getElementById('mobileMenu');
+      const open = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+}
+function ICON_replace(){ return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17" cy="7" r="1" fill="currentColor"/></svg>'; }
+
+function renderFooter(){
+  const data = getData();
+  document.getElementById('footer-slot').innerHTML = `
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <a href="#/" class="logo-lockup" style="color:var(--white)"><svg viewBox="0 0 56 56" aria-hidden="true"><use href="#mark-color-dark"/></svg>evento</a>
+        <p style="margin-top:8px">Studentská firma · ${esc(data.content.contactEmail)}</p>
+      </div>
+      <div class="foot-links">
+        <a href="#/akce">Akce</a>
+        <a href="#/tym">Tým</a>
+        <a href="#/kontakt">Kontakt</a>
+        ${data.content.instagramUrl ? `<a href="${data.content.instagramUrl}" target="_blank" rel="noopener noreferrer">Instagram</a>` : ''}
+      </div>
+      <div class="foot-legal">
+        <p>© EVENTO — studentská firma</p>
+        <a href="#/ochrana-osobnich-udaju">Ochrana osobních údajů</a>
+      </div>
+    </div>
+  </footer>`;
+}
+
+/* ================= PUBLIC PAGES ================= */
+function renderPublicPage(parts, data){
+  const el = document.getElementById('page');
+  if(parts.length===0){ el.innerHTML = pageHome(data); return; }
+  if(parts[0]==='akce' && !parts[1]){ el.innerHTML = pageAkce(data); attachAkceEvents(data); return; }
+  if(parts[0]==='akce' && parts[1]){ el.innerHTML = pageAkceDetail(data, parts[1]); return; }
+  if(parts[0]==='tym'){ el.innerHTML = pageTym(data); return; }
+  if(parts[0]==='kontakt'){ el.innerHTML = pageKontakt(data); return; }
+  if(parts[0]==='ochrana-osobnich-udaju'){ el.innerHTML = pageLegal(data); return; }
+  el.innerHTML = page404();
+}
+
+function page404(){
+  return `
+  <section class="notfound">
+    <div class="wrap">
+      <div class="big404">404</div>
+      <h1>Tahle stránka neexistuje</h1>
+      <p>Možná byl odkaz starý nebo jste si překlepli adresu. Vraťte se raději na hlavní stránku EVENTO.</p>
+      <div class="hero-cta"><a href="#/" class="btn btn-light">Zpět na Domů</a></div>
+    </div>
+  </section>`;
+}
+
+function pageHome(data){
+  const topEvents = [...data.events].sort((a,b)=>a.order-b.order).slice(0,3);
+  const topDepts = [...data.departments].sort((a,b)=>a.order-b.order).slice(0,6);
+  return `
+  <section class="hero">
+    <div class="hero-bg">
+      <svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 1200 700" style="position:absolute;inset:0" aria-hidden="true">
+        <polygon points="720,700 920,700 1200,60 1020,60" fill="#2B0F55"/>
+        <polygon points="960,700 1060,700 1200,260 1100,260" fill="#3B1478"/>
+      </svg>
+    </div>
+    <div class="wrap">
+      <div class="hero-kicker">Studentská firma · EVENTO</div>
+      <h1>EVENTO</h1>
+      <div class="hero-claim">${esc(data.content.claim)}</div>
+      <p class="hero-sub">${esc(data.content.heroText)}</p>
+      <div class="hero-cta">
+        <a href="#/kontakt" class="btn btn-light">Kontaktovat EVENTO</a>
+        <a href="#/akce" class="btn btn-outline" style="border-color:rgba(255,255,255,0.35);color:var(--white)">Naše akce</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Akce</div>
+        <h2>Akce, které EVENTO organizuje</h2>
+        <p>Výběr akcí, na kterých se EVENTO podílí — kompletní přehled najdete na stránce Akce.</p>
+      </div>
+      <div class="proj-grid">${topEvents.map(eventCard).join('')}</div>
+      <div class="section-cta reveal"><a href="#/akce" class="link-btn">Zobrazit všechny akce →</a></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Tým</div>
+        <h2>Oddělení, která tvoří EVENTO</h2>
+        <p>EVENTO funguje jako studentský tým rozdělený do jednotlivých oddělení.</p>
+      </div>
+      <div class="dept-grid">${topDepts.map(deptCard).join('')}</div>
+      <div class="section-cta reveal"><a href="#/tym" class="link-btn">Poznat strukturu týmu →</a></div>
+    </div>
+  </section>
+
+  ${kontaktSection(data)}
+  `;
+}
+function activityCard(tag,title,desc,bg){
+  return `<div class="work-card reveal"><div class="bg" style="background:${bg}"></div><div class="tag">${tag}</div><h3>${title}</h3><p>${desc}</p><div class="cta-arrow">Zjistit více →</div></div>`;
+}
+
+function pageAkce(data){
+  const list = [...data.events].sort((a,b)=>a.order-b.order);
+  return `
+  <section class="page-header">
+    <div class="wrap">
+      <div class="eyebrow">Akce</div>
+      <h1>Akce EVENTO</h1>
+      <p>Přehled akcí, které EVENTO během roku organizuje nebo má na starosti. Konkrétní termíny a detaily budou postupně doplněny.</p>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="proj-grid" id="eventGrid">${list.map(eventCard).join('') || `<div class="empty-state" style="grid-column:1/-1">Zatím tu nejsou žádné akce.</div>`}</div>
+    </div>
+  </section>`;
+}
+function attachAkceEvents(){ /* reserved for future client-side filtering/search */ }
+
+function eventCard(ev){
+  const bg = ev.image ? `background-image:url('${ev.image}')` : `background:${gradFor(ev.id)}`;
+  return `
+  <a href="#/akce/${ev.slug}" class="proj-card reveal">
+    <div class="proj-media" style="${bg}">
+      ${ev.placeholder ? `<span class="proj-demo">Obsah k upřesnění</span>` : ''}
+    </div>
+    <div class="proj-body">
+      <div class="cat">${esc(ev.category)}</div>
+      <h4>${esc(ev.name)}</h4>
+      <p>${esc(ev.summary)}</p>
+      <span class="link-btn">Zobrazit akci →</span>
+    </div>
+  </a>`;
+}
+
+function pageAkceDetail(data, slug){
+  const ev = data.events.find(x=>x.slug===slug);
+  if(!ev){
+    return `<section><div class="wrap"><h1>Akce nenalezena</h1><p style="margin-top:14px"><a class="link-btn" href="#/akce">Zpět na akce →</a></p></div></section>`;
+  }
+  const bg = ev.image ? `background-image:url('${ev.image}')` : `background:${gradFor(ev.id)}`;
+  return `
+  <section class="detail-hero" style="${bg}">
+    <div class="wrap">
+      <a href="#/akce" class="back-link">← Zpět na akce</a>
+      <h1>${esc(ev.name)}</h1>
+      <div class="detail-meta">
+        <span>${esc(ev.category)}</span>
+        ${ev.date ? `<span>${esc(ev.date)}</span>` : ''}
+        ${ev.place ? `<span>${esc(ev.place)}</span>` : ''}
+        ${ev.placeholder ? `<span>Obsah k upřesnění</span>` : ''}
+      </div>
+    </div>
+  </section>
+  <div class="detail-body">
+    <p style="font-family:var(--font-display);font-size:1.3rem;color:var(--navy)">${esc(ev.summary)}</p>
+    ${ev.description.split('\n\n').map(para => `<p>${esc(para)}</p>`).join('')}
+    ${(!ev.date && !ev.place) ? `<p style="font-size:0.85rem"><em>Termín a místo konání budou doplněny, jakmile budou potvrzené.</em></p>` : ''}
+  </div>
+  ${kontaktSection(data)}
+  `;
+}
+
+function pageTym(data){
+  const depts = [...data.departments].sort((a,b)=>a.order-b.order);
+  return `
+  <section class="page-header">
+    <div class="wrap">
+      <div class="eyebrow">Tým</div>
+      <h1>Tým EVENTO</h1>
+      <p>EVENTO tvoří studentský tým rozdělený do jednotlivých oddělení, který stojí za přípravou a realizací všech akcí.</p>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="dept-grid">${depts.map(deptCard).join('') || `<div class="empty-state" style="grid-column:1/-1">Oddělení zatím nejsou vyplněna.</div>`}</div>
+      <div class="teacher-note">Vedoucím pedagogem studentské firmy EVENTO je <b>Pavel Matys</b> — pedagogický dohled a metodická podpora týmu.</div>
+    </div>
+  </section>`;
+}
+function deptCard(d){
+  return `<div class="dept-card reveal" style="background:${gradFor(d.id)}"><div class="dept-mono" aria-hidden="true">${esc((d.name||'?').slice(0,2).toUpperCase())}</div><h3>${esc(d.name)}</h3><p>${esc(d.description)}</p></div>`;
+}
+
+function kontaktSection(data){
+  const ig = data.content.instagramUrl;
+  return `
+  <section class="contact-section">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div>
+          <div class="section-head reveal">
+            <div class="eyebrow" style="color:var(--sky)">Kontakt</div>
+            <h2>Máte nápad? Ozvěte se EVENTU.</h2>
+            <p>Ať už jste student, rodič, vedení školy nebo firma se zájmem o spolupráci — jsme tu pro vás.</p>
+          </div>
+          <div class="contact-list">
+            <div class="contact-item">${ICON_MAIL}<a href="mailto:${esc(data.content.contactEmail)}">${esc(data.content.contactEmail)}</a></div>
+          </div>
+          <div class="hero-cta" style="margin-top:36px"><a href="mailto:${esc(data.content.contactEmail)}" class="btn btn-light">Kontaktovat EVENTO</a></div>
+        </div>
+        <div class="ig-block">
+          <svg viewBox="0 0 56 56" style="width:40px;height:40px;margin:0 auto 18px;color:var(--sky)" aria-hidden="true"><use href="#mark-color-dark"/></svg>
+          <h3>Instagram EVENTO</h3>
+          ${ig
+            ? `<span class="ig-handle">${esc(data.content.instagramHandle||'')}</span><p>Nejnovější fotky a zákulisí EVENTO.</p><a href="${ig}" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="border-color:rgba(255,255,255,0.35);color:var(--white)">Otevřít Instagram</a>`
+            : `<p>Účet zatím není definitivně určen. Jakmile bude EVENTO Instagram spuštěný, odkaz se objeví zde.</p><span class="btn btn-outline" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.4);cursor:not-allowed">Brzy k dispozici</span>`
+          }
+        </div>
+      </div>
+    </div>
+  </section>`;
+}
+
+function pageKontakt(data){
+  const ig = data.content.instagramUrl;
+  return `
+  <section class="page-header contact-section" style="padding-top:150px">
+    <div class="wrap">
+      <div class="eyebrow" style="color:var(--sky)">Kontakt</div>
+      <h1>Máte nápad? Ozvěte se EVENTU.</h1>
+      <p>Ať už jste student, rodič, vedení školy nebo firma se zájmem o spolupráci — jsme tu pro vás.</p>
+    </div>
+  </section>
+  <section class="contact-section" style="padding-top:70px">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div>
+          <div class="contact-list">
+            <div class="contact-item">${ICON_MAIL}<a href="mailto:${esc(data.content.contactEmail)}">${esc(data.content.contactEmail)}</a></div>
+          </div>
+          <div class="hero-cta" style="margin-top:36px"><a href="mailto:${esc(data.content.contactEmail)}" class="btn btn-light">Napsat e-mail</a></div>
+        </div>
+        <div class="ig-block">
+          <svg viewBox="0 0 56 56" style="width:40px;height:40px;margin:0 auto 18px;color:var(--sky)" aria-hidden="true"><use href="#mark-color-dark"/></svg>
+          <h3>Instagram EVENTO</h3>
+          ${ig
+            ? `<span class="ig-handle">${esc(data.content.instagramHandle||'')}</span><p>Nejnovější fotky a zákulisí EVENTO.</p><a href="${ig}" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="border-color:rgba(255,255,255,0.35);color:var(--white)">Otevřít Instagram</a>`
+            : `<p>Účet zatím není definitivně určen. Jakmile bude EVENTO Instagram spuštěný, odkaz se objeví zde.</p>`
+          }
+        </div>
+      </div>
+
+      <div style="margin-top:90px">
+        <h2 style="color:var(--white);font-size:1.1rem;margin-bottom:24px;text-align:center;">Organizační struktura</h2>
+        <div class="org-flow">
+          <div class="org-step" style="background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.15)"><b style="color:var(--white)">Vedení</b><span style="color:rgba(255,255,255,0.6)">Strategie a zastřešení EVENTO</span></div>
+          <div class="org-arrow" aria-hidden="true">→</div>
+          <div class="org-step" style="background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.15)"><b style="color:var(--white)">Oddělení</b><span style="color:rgba(255,255,255,0.6)">${esc([...data.departments].sort((a,b)=>a.order-b.order).map(d=>d.name).join(', '))}</span></div>
+          <div class="org-arrow" aria-hidden="true">→</div>
+          <div class="org-step" style="background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.15)"><b style="color:var(--white)">Členové EVENTO</b><span style="color:rgba(255,255,255,0.6)">Studenti napříč ročníky</span></div>
+        </div>
+      </div>
+    </div>
+  </section>`;
+}
+
+function pageLegal(data){
+  return `
+  <section class="page-header">
+    <div class="wrap">
+      <div class="eyebrow">Právní informace</div>
+      <h1>Ochrana osobních údajů</h1>
+      <p>Tato stránka je připravena jako struktura pro budoucí doplnění závazných právních údajů EVENTO.</p>
+    </div>
+  </section>
+  <section>
+    <div class="legal-body">
+      <div class="legal-todo"><b>TODO / PLACEHOLDER:</b> Právní údaje níže ještě nejsou potvrzené. Doplní je vedení EVENTO, jakmile bude znám provozovatel a právní rámec webu.</div>
+
+      <h2>Provozovatel webu</h2>
+      <p>[TODO — doplnit název a právní formu provozovatele]</p>
+
+      <h2>Správce osobních údajů</h2>
+      <p>[TODO — doplnit, kdo je správcem osobních údajů ve smyslu GDPR]</p>
+
+      <h2>Jaké údaje zpracováváme</h2>
+      <p>V tuto chvíli web neobsahuje kontaktní formulář ani registraci. Jediný způsob kontaktu je přímý e-mail na ${esc(data.content.contactEmail)}, kdy se zpracování údajů řídí běžnou e-mailovou komunikací.</p>
+
+      <h2>Soubory cookie a localStorage</h2>
+      <p>Web aktuálně nepoužívá marketingové ani analytické cookies. Prohlížeč lokálně ukládá (localStorage) obsah webu pro účely administrace a technickou informaci o přihlášení do administrace (sessionStorage). Web načítá písma z Google Fonts, což může vést k přenosu technických údajů (např. IP adresy) na servery Google.</p>
+
+      <h2>Právní základ zpracování</h2>
+      <p>[TODO — doplnit po potvrzení provozovatele a účelu zpracování]</p>
+
+      <h2>Kontakt ve věci ochrany osobních údajů</h2>
+      <p>[TODO — doplnit, pokud se bude lišit od obecného kontaktu ${esc(data.content.contactEmail)}]</p>
+    </div>
+  </section>`;
+}
+
+function esc(s){ return (s||'').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+function observeReveals(){
+  const els = document.querySelectorAll('.reveal:not(.in)');
+  if(!('IntersectionObserver' in window)){ els.forEach(e=>e.classList.add('in')); return; }
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, {threshold:0.12});
+  els.forEach(e=>io.observe(e));
+}
+
+/* ================= ADMIN ================= */
+const ADMIN_TABS = [
+  {key:'dashboard', label:'Dashboard'},
+  {key:'akce', label:'Akce'},
+  {key:'co-delame', label:'Co děláme'},
+  {key:'oddeleni', label:'Oddělení'},
+  {key:'web', label:'Web'},
+  {key:'nastaveni', label:'Nastavení'}
+];
+
+function renderAdminChrome(parts, data){
+  document.getElementById('footer-slot').innerHTML = '';
+  if(!isAdmin()){
+    document.getElementById('header-slot').innerHTML = `
+    <div class="admin-bar"><div class="wrap"><a href="#/" class="logo-lockup"><svg viewBox="0 0 56 56" aria-hidden="true"><use href="#mark-color-dark"/></svg>evento admin</a><div class="admin-bar-right"><a href="#/">← Zpět na web</a></div></div></div>`;
+    document.getElementById('page').innerHTML = `
+    <div class="login-box">
+      <h1 style="font-size:1.4rem">Přihlášení do administrace</h1>
+      <p>Tato sekce slouží pouze vedení EVENTO. Zadejte přístupové heslo.</p>
+      <div class="field" style="text-align:left"><label for="adminPass">Heslo</label><input type="password" id="adminPass" placeholder="••••••••" autocomplete="current-password"></div>
+      <button class="btn btn-primary" style="width:100%;justify-content:center" id="loginBtn">Přihlásit se</button>
+      <p class="hint" style="margin-top:16px">Demo prototyp: jednoduchá ochrana jen pro účely náhledu — NENÍ to produkční zabezpečení. Skutečné nasazení vyžaduje serverovou autentizaci.</p>
+    </div>`;
+    const doLogin = ()=>{
+      const val = document.getElementById('adminPass').value;
+      if(val === ADMIN_PASSWORD){ sessionStorage.setItem(AUTH_KEY,'1'); go('admin'); }
+      else showToast('Nesprávné heslo.', true);
+    };
+    document.getElementById('loginBtn').addEventListener('click', doLogin);
+    document.getElementById('adminPass').addEventListener('keydown', e=>{ if(e.key==='Enter') doLogin(); });
+    document.getElementById('adminPass').focus();
+    return;
+  }
+
+  document.getElementById('header-slot').innerHTML = `
+  <div class="admin-bar"><div class="wrap">
+    <a href="#/admin" class="logo-lockup"><svg viewBox="0 0 56 56" aria-hidden="true"><use href="#mark-color-dark"/></svg>evento admin</a>
+    <div class="admin-bar-right"><a href="#/">Zobrazit web</a><a href="#" id="logoutLink">Odhlásit se</a></div>
+  </div></div>`;
+  document.getElementById('logoutLink').addEventListener('click', (e)=>{ e.preventDefault(); sessionStorage.removeItem(AUTH_KEY); go('admin'); });
+
+  const tab = parts[1] || 'dashboard';
+  const el = document.getElementById('page');
+  el.innerHTML = `
+  <h1 class="visually-hidden">EVENTO Admin</h1>
+  <div class="admin-shell">
+    <div class="admin-side">
+      ${ADMIN_TABS.map(t=>`<a href="#/admin${t.key==='dashboard'?'':'/'+t.key}" class="${tab===t.key?'active':''}">${t.label}</a>`).join('')}
+    </div>
+    <div class="admin-main" id="adminMain"></div>
+  </div>`;
+  const main = document.getElementById('adminMain');
+  if(tab==='dashboard') main.innerHTML = adminDashboard(data);
+  else if(tab==='akce'){ main.innerHTML = adminAkce(data); attachAdminAkceEvents(); }
+  else if(tab==='co-delame'){ main.innerHTML = adminCoDelame(data); attachAdminCoDelameEvents(); }
+  else if(tab==='oddeleni'){ main.innerHTML = adminOddeleni(data); attachAdminOddeleniEvents(); }
+  else if(tab==='web'){ main.innerHTML = adminWeb(data); attachAdminWebEvents(); }
+  else if(tab==='nastaveni'){ main.innerHTML = adminNastaveni(data); attachAdminNastaveniEvents(); }
+  else { main.innerHTML = `<div class="empty-state">Tato sekce administrace neexistuje.</div>`; }
+}
+
+function adminDashboard(data){
+  const photoCount = data.events.filter(e=>e.image).length;
+  return `
+  <h2>EVENTO Admin</h2>
+  <p class="sub">Přehled obsahu webu.</p>
+  <div class="stat-grid">
+    <div class="stat-card"><span>${data.events.length}</span><small>Akcí</small></div>
+    <div class="stat-card"><span>${data.departments.length}</span><small>Oddělení</small></div>
+    <div class="stat-card"><span>${photoCount}</span><small>Nahraných fotografií</small></div>
+  </div>
+  <div class="quick-actions">
+    <a href="#/admin/akce" class="btn btn-primary btn-sm">+ Přidat akci</a>
+    <a href="#/admin/oddeleni" class="btn btn-outline btn-sm">+ Přidat oddělení</a>
+    <a href="#/admin/web" class="btn btn-outline btn-sm">Upravit web</a>
+  </div>`;
+}
+
+/* --- Akce --- */
+function slugify(s){ return s.toLowerCase().trim()
+  .replace(/[áàäâ]/g,'a').replace(/[éěèë]/g,'e').replace(/[íìï]/g,'i').replace(/[óòö]/g,'o').replace(/[úůù]/g,'u')
+  .replace(/ý/g,'y').replace(/č/g,'c').replace(/ď/g,'d').replace(/ň/g,'n').replace(/ř/g,'r').replace(/š/g,'s').replace(/ť/g,'t').replace(/ž/g,'z')
+  .replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,''); }
+
+function adminAkce(data){
+  const list = [...data.events].sort((a,b)=>a.order-b.order);
+  return `
+  <h2>Akce</h2>
+  <p class="sub">Vytvářejte, upravujte a řaďte akce zobrazené na webu.</p>
+  <button class="btn btn-primary btn-sm" id="newEventBtn">+ Přidat akci</button>
+  <div id="eventFormSlot" style="margin-top:24px"></div>
+  ${list.length ? `
+  <table class="admin-table" style="margin-top:28px">
+    <tr><th></th><th>Název</th><th>Kategorie</th><th></th></tr>
+    ${list.map((ev,i)=>`
+    <tr>
+      <td><div class="row-thumb" style="${ev.image?`background-image:url('${ev.image}')`:`background:${gradFor(ev.id)}`}"></div></td>
+      <td>${esc(ev.name)}${ev.placeholder?' <span class="badge">k upřesnění</span>':''}</td>
+      <td>${esc(ev.category)}</td>
+      <td>
+        <div class="row-actions">
+          <button class="icon-btn" data-up="${ev.id}" title="Nahoru" aria-label="Posunout akci ${esc(ev.name)} nahoru" ${i===0?'disabled':''}>${ICON_UP}</button>
+          <button class="icon-btn" data-down="${ev.id}" title="Dolů" aria-label="Posunout akci ${esc(ev.name)} dolů" ${i===list.length-1?'disabled':''}>${ICON_DOWN}</button>
+          <button class="icon-btn" data-edit="${ev.id}" title="Upravit" aria-label="Upravit akci ${esc(ev.name)}">${ICON_EDIT}</button>
+          <button class="icon-btn" data-del="${ev.id}" title="Smazat" aria-label="Smazat akci ${esc(ev.name)}">${ICON_TRASH}</button>
+        </div>
+      </td>
+    </tr>`).join('')}
+  </table>` : `<div class="empty-state" style="margin-top:28px">Zatím žádné akce. Přidejte první pomocí tlačítka výše.</div>`}`;
+}
+function eventFormHtml(ev){
+  const isEdit = !!ev;
+  ev = ev || {id:'', name:'', category:'', summary:'', description:'', image:'', date:'', place:'', placeholder:true};
+  return `
+  <div class="form-card">
+    <h3>${isEdit?'Upravit akci':'Nová akce'}</h3>
+    <div class="field-row">
+      <div class="field" id="ef_name_field"><label for="ef_name">Název akce <span class="req">*</span></label><input id="ef_name" value="${escAttr(ev.name)}"><div class="error-msg">Vyplňte prosím název akce.</div></div>
+      <div class="field"><label for="ef_category">Kategorie</label><input id="ef_category" value="${escAttr(ev.category)}" placeholder="např. Sport, Business, Výjezd"></div>
+    </div>
+    <div class="field-row">
+      <div class="field"><label for="ef_date">Datum (volitelné)</label><input id="ef_date" value="${escAttr(ev.date)}" placeholder="např. jaro 2026"></div>
+      <div class="field"><label for="ef_place">Místo (volitelné)</label><input id="ef_place" value="${escAttr(ev.place)}" placeholder="např. tělocvična školy"></div>
+    </div>
+    <div class="field"><label for="ef_summary">Krátký popis (na kartě)</label><textarea id="ef_summary" style="min-height:60px">${escAttr(ev.summary)}</textarea></div>
+    <div class="field"><label for="ef_description">Detailní popis (na stránce akce)</label><textarea id="ef_description">${escAttr(ev.description)}</textarea></div>
+    <div class="field">
+      <label>Hlavní fotografie</label>
+      <div class="upload-row">
+        <div class="upload-preview" id="ef_preview" style="${ev.image?`background-image:url('${ev.image}')`:''}"></div>
+        <input type="file" id="ef_image" accept="image/*" aria-label="Nahrát hlavní fotografii akce">
+      </div>
+      <div class="hint">Volitelné — bez fotografie se použije brandový barevný podklad.</div>
+    </div>
+    <div class="field"><label><input type="checkbox" id="ef_placeholder" ${ev.placeholder?'checked':''} style="width:auto;margin-right:8px"> Označit jako obsah k upřesnění</label></div>
+    <div class="form-actions">
+      <button class="btn btn-primary btn-sm" id="saveEventBtn">Uložit akci</button>
+      <button class="btn btn-outline btn-sm" id="cancelEventBtn">Zrušit</button>
+      <span class="form-status" id="eventFormStatus"></span>
+    </div>
+  </div>`;
+}
+function escAttr(s){ return esc(s); }
+
+function attachAdminAkceEvents(){
+  const data = getData();
+  let editingImage = null;
+
+  document.getElementById('newEventBtn').addEventListener('click', ()=>openEventForm(null));
+
+  document.querySelectorAll('[data-edit]').forEach(b=>b.addEventListener('click', ()=>{
+    const ev = data.events.find(x=>x.id===b.dataset.edit); openEventForm(ev);
+  }));
+  document.querySelectorAll('[data-del]').forEach(b=>b.addEventListener('click', ()=>{
+    const ev = data.events.find(x=>x.id===b.dataset.del);
+    if(!confirm(`Opravdu trvale smazat akci „${ev?ev.name:''}“? Tuto akci nelze vzít zpět.`)) return;
+    const d = getData(); d.events = d.events.filter(x=>x.id!==b.dataset.del);
+    if(saveData(d)){ showToast('Akce smazána.'); render(); }
+  }));
+  document.querySelectorAll('[data-up]').forEach(b=>b.addEventListener('click', ()=>moveItem('events', b.dataset.up, -1)));
+  document.querySelectorAll('[data-down]').forEach(b=>b.addEventListener('click', ()=>moveItem('events', b.dataset.down, 1)));
+
+  function openEventForm(ev){
+    editingImage = ev ? ev.image : '';
+    document.getElementById('eventFormSlot').innerHTML = eventFormHtml(ev);
+    document.getElementById('ef_image').addEventListener('change', (e)=>{
+      const file = e.target.files[0]; if(!file) return;
+      if(file.size > 4*1024*1024){ showToast('Fotografie je příliš velká (max 4 MB).', true); e.target.value=''; return; }
+      if(!file.type.startsWith('image/')){ showToast('Vyberte prosím obrázek.', true); e.target.value=''; return; }
+      const reader = new FileReader();
+      reader.onload = ()=>{ editingImage = reader.result; document.getElementById('ef_preview').style.backgroundImage = `url('${editingImage}')`; };
+      reader.readAsDataURL(file);
+    });
+    document.getElementById('cancelEventBtn').addEventListener('click', ()=>{ document.getElementById('eventFormSlot').innerHTML=''; });
+    document.getElementById('saveEventBtn').addEventListener('click', ()=>{
+      const nameField = document.getElementById('ef_name');
+      const name = nameField.value.trim();
+      if(!name){
+        document.getElementById('ef_name_field').classList.add('error');
+        nameField.focus();
+        showToast('Vyplňte název akce.', true);
+        return;
+      }
+      document.getElementById('ef_name_field').classList.remove('error');
+      const status = document.getElementById('eventFormStatus');
+      status.textContent = 'Ukládám…';
+      const d = getData();
+      const payload = {
+        name,
+        category: document.getElementById('ef_category').value.trim() || 'Akce',
+        date: document.getElementById('ef_date').value.trim(),
+        place: document.getElementById('ef_place').value.trim(),
+        summary: document.getElementById('ef_summary').value.trim(),
+        description: document.getElementById('ef_description').value.trim(),
+        image: editingImage || '',
+        placeholder: document.getElementById('ef_placeholder').checked
+      };
+      if(ev && ev.id){
+        const idx = d.events.findIndex(x=>x.id===ev.id);
+        d.events[idx] = {...d.events[idx], ...payload};
+      } else {
+        let slug = slugify(name) || 'akce';
+        let uniqueSlug = slug, n=2;
+        while(d.events.some(x=>x.slug===uniqueSlug)){ uniqueSlug = slug+'-'+n; n++; }
+        const maxOrder = d.events.reduce((m,x)=>Math.max(m,x.order||0),0);
+        d.events.push({id:'e'+Date.now(), slug:uniqueSlug, order:maxOrder+1, ...payload});
+      }
+      if(saveData(d)){
+        status.textContent = 'Uloženo.';
+        showToast('Akce uložena.');
+        go('admin/akce');
+      } else {
+        status.textContent = 'Uložení selhalo.';
+      }
+    });
+  }
+}
+
+/* --- Oddělení --- */
+function adminOddeleni(data){
+  const list = [...data.departments].sort((a,b)=>a.order-b.order);
+  return `
+  <h2>Oddělení</h2>
+  <p class="sub">Spravujte oddělení studentského týmu EVENTO (bez jmen jednotlivých členů).</p>
+  <button class="btn btn-primary btn-sm" id="newDeptBtn">+ Přidat oddělení</button>
+  <div id="deptFormSlot" style="margin-top:24px"></div>
+  ${list.length ? `
+  <table class="admin-table" style="margin-top:28px">
+    <tr><th>Název</th><th>Popis</th><th></th></tr>
+    ${list.map((dpt,i)=>`
+    <tr>
+      <td>${esc(dpt.name)}</td>
+      <td>${esc(dpt.description)}</td>
+      <td>
+        <div class="row-actions">
+          <button class="icon-btn" data-up="${dpt.id}" title="Nahoru" aria-label="Posunout oddělení ${esc(dpt.name)} nahoru" ${i===0?'disabled':''}>${ICON_UP}</button>
+          <button class="icon-btn" data-down="${dpt.id}" title="Dolů" aria-label="Posunout oddělení ${esc(dpt.name)} dolů" ${i===list.length-1?'disabled':''}>${ICON_DOWN}</button>
+          <button class="icon-btn" data-edit="${dpt.id}" title="Upravit" aria-label="Upravit oddělení ${esc(dpt.name)}">${ICON_EDIT}</button>
+          <button class="icon-btn" data-del="${dpt.id}" title="Smazat" aria-label="Smazat oddělení ${esc(dpt.name)}">${ICON_TRASH}</button>
+        </div>
+      </td>
+    </tr>`).join('')}
+  </table>` : `<div class="empty-state" style="margin-top:28px">Zatím žádná oddělení. Přidejte první pomocí tlačítka výše.</div>`}`;
+}
+function deptFormHtml(dpt){
+  const isEdit = !!dpt;
+  dpt = dpt || {id:'', name:'', description:''};
+  return `
+  <div class="form-card">
+    <h3>${isEdit?'Upravit oddělení':'Nové oddělení'}</h3>
+    <div class="field" id="df_name_field"><label for="df_name">Název oddělení <span class="req">*</span></label><input id="df_name" value="${escAttr(dpt.name)}"><div class="error-msg">Vyplňte prosím název oddělení.</div></div>
+    <div class="field"><label for="df_description">Krátký popis</label><textarea id="df_description" style="min-height:70px">${escAttr(dpt.description)}</textarea></div>
+    <div class="form-actions">
+      <button class="btn btn-primary btn-sm" id="saveDeptBtn">Uložit oddělení</button>
+      <button class="btn btn-outline btn-sm" id="cancelDeptBtn">Zrušit</button>
+      <span class="form-status" id="deptFormStatus"></span>
+    </div>
+  </div>`;
+}
+function attachAdminOddeleniEvents(){
+  const data = getData();
+  document.getElementById('newDeptBtn').addEventListener('click', ()=>openDeptForm(null));
+  document.querySelectorAll('[data-edit]').forEach(b=>b.addEventListener('click', ()=>{
+    const dpt = data.departments.find(x=>x.id===b.dataset.edit); openDeptForm(dpt);
+  }));
+  document.querySelectorAll('[data-del]').forEach(b=>b.addEventListener('click', ()=>{
+    const dpt = data.departments.find(x=>x.id===b.dataset.del);
+    if(!confirm(`Opravdu trvale smazat oddělení „${dpt?dpt.name:''}“?`)) return;
+    const d = getData(); d.departments = d.departments.filter(x=>x.id!==b.dataset.del);
+    if(saveData(d)){ showToast('Oddělení smazáno.'); render(); }
+  }));
+  document.querySelectorAll('[data-up]').forEach(b=>b.addEventListener('click', ()=>moveItem('departments', b.dataset.up, -1)));
+  document.querySelectorAll('[data-down]').forEach(b=>b.addEventListener('click', ()=>moveItem('departments', b.dataset.down, 1)));
+
+  function openDeptForm(dpt){
+    document.getElementById('deptFormSlot').innerHTML = deptFormHtml(dpt);
+    document.getElementById('cancelDeptBtn').addEventListener('click', ()=>{ document.getElementById('deptFormSlot').innerHTML=''; });
+    document.getElementById('saveDeptBtn').addEventListener('click', ()=>{
+      const nameField = document.getElementById('df_name');
+      const name = nameField.value.trim();
+      if(!name){
+        document.getElementById('df_name_field').classList.add('error');
+        nameField.focus();
+        showToast('Vyplňte název oddělení.', true);
+        return;
+      }
+      document.getElementById('df_name_field').classList.remove('error');
+      const status = document.getElementById('deptFormStatus');
+      status.textContent = 'Ukládám…';
+      const d = getData();
+      const payload = { name, description: document.getElementById('df_description').value.trim() };
+      if(dpt && dpt.id){
+        const idx = d.departments.findIndex(x=>x.id===dpt.id);
+        d.departments[idx] = {...d.departments[idx], ...payload};
+      } else {
+        const maxOrder = d.departments.reduce((m,x)=>Math.max(m,x.order||0),0);
+        d.departments.push({id:'d'+Date.now(), order:maxOrder+1, ...payload});
+      }
+      if(saveData(d)){ status.textContent = 'Uloženo.'; showToast('Oddělení uloženo.'); go('admin/oddeleni'); }
+      else { status.textContent = 'Uložení selhalo.'; }
+    });
+  }
+}
+
+function moveItem(key, id, dir){
+  const d = getData();
+  const list = [...d[key]].sort((a,b)=>a.order-b.order);
+  const idx = list.findIndex(x=>x.id===id);
+  const swapIdx = idx+dir;
+  if(swapIdx<0 || swapIdx>=list.length) return;
+  const tmp = list[idx].order; list[idx].order = list[swapIdx].order; list[swapIdx].order = tmp;
+  d[key] = list;
+  saveData(d);
+  render();
+}
+
+/* --- Co děláme --- */
+function adminCoDelame(data){
+  return `
+  <h2>Co děláme</h2>
+  <p class="sub">Text obecné sekce „Co děláme" zobrazené na Domů i na vlastní stránce.</p>
+  <div class="form-card">
+    <div class="field"><label for="cd_text">Text sekce</label><textarea id="cd_text" style="min-height:140px">${escAttr(data.content.coDelameText)}</textarea></div>
+    <div class="form-actions">
+      <button class="btn btn-primary btn-sm" id="saveCoDelameBtn">Uložit</button>
+      <span class="form-status" id="coDelameStatus"></span>
+    </div>
+  </div>`;
+}
+function attachAdminCoDelameEvents(){
+  document.getElementById('saveCoDelameBtn').addEventListener('click', ()=>{
+    const status = document.getElementById('coDelameStatus');
+    status.textContent = 'Ukládám…';
+    const d = getData();
+    d.content.coDelameText = document.getElementById('cd_text').value.trim();
+    if(saveData(d)){ status.textContent = 'Uloženo.'; showToast('Text uložen.'); }
+    else { status.textContent = 'Uložení selhalo.'; }
+  });
+}
+
+/* --- Web (Hero / CTA / Kontakt / Instagram) --- */
+function adminWeb(data){
+  const c = data.content;
+  return `
+  <h2>Web</h2>
+  <p class="sub">Hero text, kontaktní e-mail a Instagram.</p>
+  <div class="form-card">
+    <div class="field"><label for="w_claim">Hlavní claim (hero)</label><input id="w_claim" value="${escAttr(c.claim)}"></div>
+    <div class="field"><label for="w_hero">Hero text</label><textarea id="w_hero" style="min-height:70px">${escAttr(c.heroText)}</textarea></div>
+    <div class="field-row">
+      <div class="field"><label for="w_email">Kontaktní e-mail</label><input id="w_email" value="${escAttr(c.contactEmail)}"></div>
+      <div class="field"><label for="w_ig_handle">Instagram handle</label><input id="w_ig_handle" value="${escAttr(c.instagramHandle)}" placeholder="@evento_heroldky"></div>
+    </div>
+    <div class="field"><label for="w_ig_url">Instagram URL</label><input id="w_ig_url" value="${escAttr(c.instagramUrl)}" placeholder="https://instagram.com/..."></div>
+    <div class="form-actions">
+      <button class="btn btn-primary btn-sm" id="saveWebBtn">Uložit změny</button>
+      <span class="form-status" id="webStatus"></span>
+    </div>
+  </div>`;
+}
+function attachAdminWebEvents(){
+  document.getElementById('saveWebBtn').addEventListener('click', ()=>{
+    const status = document.getElementById('webStatus');
+    status.textContent = 'Ukládám…';
+    const d = getData();
+    d.content.claim = document.getElementById('w_claim').value.trim() || d.content.claim;
+    d.content.heroText = document.getElementById('w_hero').value.trim();
+    d.content.contactEmail = document.getElementById('w_email').value.trim() || d.content.contactEmail;
+    d.content.instagramHandle = document.getElementById('w_ig_handle').value.trim();
+    d.content.instagramUrl = document.getElementById('w_ig_url').value.trim();
+    if(saveData(d)){ status.textContent = 'Uloženo.'; showToast('Web uložen.'); }
+    else { status.textContent = 'Uložení selhalo.'; }
+  });
+}
+
+/* --- Nastavení (základní SEO) --- */
+function adminNastaveni(data){
+  const c = data.content;
+  return `
+  <h2>Nastavení</h2>
+  <p class="sub">Základní SEO nastavení. Poznámka: titulek stránky se po uložení aktualizuje v prohlížeči, ale pro vyhledávače a odkazové náhledy je rozhodující verze nastavená přímo ve zdrojovém HTML (vyžaduje nasazení).</p>
+  <div class="form-card">
+    <div class="field"><label for="n_title">Titulek stránky</label><input id="n_title" value="${escAttr(c.pageTitle)}"></div>
+    <div class="field"><label for="n_desc">Meta popis</label><textarea id="n_desc" style="min-height:90px">${escAttr(c.metaDescription)}</textarea></div>
+    <div class="form-actions">
+      <button class="btn btn-primary btn-sm" id="saveSeoBtn">Uložit</button>
+      <span class="form-status" id="seoStatus"></span>
+    </div>
+  </div>`;
+}
+function attachAdminNastaveniEvents(){
+  document.getElementById('saveSeoBtn').addEventListener('click', ()=>{
+    const status = document.getElementById('seoStatus');
+    status.textContent = 'Ukládám…';
+    const d = getData();
+    d.content.pageTitle = document.getElementById('n_title').value.trim() || d.content.pageTitle;
+    d.content.metaDescription = document.getElementById('n_desc').value.trim();
+    if(saveData(d)){
+      status.textContent = 'Uloženo.';
+      showToast('Nastavení uloženo.');
+      applyDocumentMeta(d);
+    } else { status.textContent = 'Uložení selhalo.'; }
+  });
+}
+</script>
+</body>
+</html>
